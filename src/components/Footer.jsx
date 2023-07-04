@@ -13,13 +13,14 @@ const SFooter = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    margin: 0 calc((100% - 1050px)/2);
-    @media (max-width: 974px) {
+    margin: 0 13.54%;
+    @media (max-width: 834px) {
         gap: 49px;
-        margin: 0 calc((100% - 315px)/2);
+        margin: 0 8.63%;
     }
     @media (max-width: 375px) {
         gap: 20px;
+        margin: 0 8%;
     }
 `
 
@@ -58,7 +59,7 @@ const FooterTop = styled.div`
         fill: #858584;
         color: white;
     }
-    @media (max-width: 974px) {
+    @media (max-width: 834px) {
         flex-direction: column;
     }
 `

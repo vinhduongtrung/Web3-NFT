@@ -1,22 +1,31 @@
 import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import { ReactComponent as Shopping } from "../assets/shopping.svg";
+import { ReactComponent as Title } from "../assets/logo-title.svg";
 import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
 import { NavLink } from 'react-router-dom';
 
 const SHeader = styled.header`
     display: flex;
-    position: relative;
+    flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     background-color: #2B2B2B;
     color:white;
+    padding: 20px 50px;
     .logo {
         display: flex;
         align-items: center;
     }
     .logo-title {
-        margin-left: 8px;
+        margin-left: 12px;
+        height: 20px;
+        width: 199px;
+    }
+    svg {
+        width: 32px;
+        height: 32px;
+        fill: #858584;
+        color: white;
     }
     .nav-links {
         height: 100%;
@@ -30,19 +39,14 @@ const SHeader = styled.header`
         list-style: none;
         font-size: 16px;
         font-weight: 600;
-        font-family: 'work sans';
         padding: 1rem;
     }
     a {
         text-decoration: none;
         color: white;
-        padding: 1rem;
         display: block;
     }
     .toggle-button {
-        position: absolute;
-        vertical-align: middle;
-        right: 1rem;
         display: none;
         width: 30px;
         height: 21px;
@@ -53,10 +57,14 @@ const SHeader = styled.header`
         background-color: white;
         border-radius: 10px;
     }
-    @media (max-width: 974px) {
-        flex-direction: column;
+    @media (max-width: 834px) {
+        display: block;
         align-items: flex-start;
-
+        padding: 15px 50px;
+        svg {
+        width: 24px;
+        height: 24px;
+        }
         .toggle-button {
             display: flex;
         }
@@ -72,14 +80,28 @@ const SHeader = styled.header`
         .nav-links ul li {
             text-align: center;
         }
-
-        a {
-            padding: .5rem 1rem;
-        }
         .active {
             display: flex;
+            justify-content: center;
+        }
+        .logo-title {
+            height: 15px;
+            width: 150px;
         }
     }
+    @media (max-width: 375px) {
+        padding: 15px 30px;
+        svg {
+        width: 24px;
+        height: 24px;
+        }
+    }
+`
+const HeaderTop = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 `
 const Header = () => {
     const [isActive, setActive] = useState(false)
@@ -89,11 +111,13 @@ const Header = () => {
     }
     return (
         <SHeader>
-            <NavLink to={'/'} className='logo'>
-                <Shopping />
-                <div className="logo-title">NFT Marketplace</div>
-            </NavLink>
-            <NavMenu className="toggle-button" onClick={toggleActive}/>
+            <HeaderTop>
+                <NavLink to={'/'} className='logo'>
+                    <Shopping />
+                    <Title className="logo-title"/>
+                </NavLink>
+                <NavMenu className="toggle-button" onClick={toggleActive}/>
+            </HeaderTop>
             <div className={isActive ? "nav-links active" : "nav-links"}>
                 <ul>
                     <li><NavLink to ={'/marketplace'}>Marketplace</NavLink></li>
