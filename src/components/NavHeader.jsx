@@ -14,6 +14,9 @@ const SHeader = styled.header`
         display: flex;
         align-items: center;
     }
+    .logo-title {
+        margin-left: 8px;
+    }
     .nav-links {
         height: 100%;
     }
