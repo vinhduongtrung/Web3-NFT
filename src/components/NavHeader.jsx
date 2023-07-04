@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import { ReactComponent as Shopping } from "../assets/shopping.svg";
 import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
+import { NavLink } from 'react-router-dom';
 
 const SHeader = styled.header`
     display: flex;
@@ -32,7 +33,7 @@ const SHeader = styled.header`
         font-family: 'work sans';
         padding: 1rem;
     }
-    .nav-links li a {
+    a {
         text-decoration: none;
         color: white;
         padding: 1rem;
@@ -72,7 +73,7 @@ const SHeader = styled.header`
             text-align: center;
         }
 
-        .nav-links ul li a {
+        a {
             padding: .5rem 1rem;
         }
         .active {
@@ -88,17 +89,17 @@ const Header = () => {
     }
     return (
         <SHeader>
-            <div className='logo'>
+            <NavLink to={'/'} className='logo'>
                 <Shopping />
                 <div className="logo-title">NFT Marketplace</div>
-            </div>
+            </NavLink>
             <NavMenu className="toggle-button" onClick={toggleActive}/>
             <div className={isActive ? "nav-links active" : "nav-links"}>
                 <ul>
-                    <li>Marketplace</li>
-                    <li>Rankings</li>
-                    <li>Connect a wallet</li>
-                    <li>Sign up</li>
+                    <li><NavLink to ={'/marketplace'}>Marketplace</NavLink></li>
+                    <li><NavLink to ={'/rankings'}>Rankings</NavLink></li>
+                    <li><NavLink to ={'/register'}>Connect a wallet</NavLink></li>
+                    <li><NavLink to ={'/register'}>Sign up</NavLink></li>
                 </ul>
             </div>
         </SHeader>

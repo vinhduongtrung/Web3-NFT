@@ -5,6 +5,7 @@ import { ReactComponent as VideoGame } from "../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../assets/instagram.svg";
+import { NavLink } from 'react-router-dom';
 
 
 const SFooter = styled.div`
@@ -43,10 +44,14 @@ const FooterTop = styled.div`
         font-weight: 700;
         color: #FFFFFF;
     }
-    p{
+    p, a{
         font-size: 16px;
         font-weight: 400;
         color:#CCCCCC;
+    }
+    a{
+        text-decoration: none;
+        display: block;
     }
     svg {
         width: 20px;
@@ -66,6 +71,7 @@ const GridContainer = styled.div`
     grid-template-columns: repeat(4, auto);
     width: 200px;
 `
+
 const Footer = () => {
   return (
     <SFooter>
@@ -86,9 +92,9 @@ const Footer = () => {
         </div>
         <div className='footer_head_column'>
             <h2>Explore</h2>
-            <p>Marketplace</p>
-            <p>Rankings</p>
-            <p>Connect a wallet</p>
+            <NavLink to ={'/marketplace'}>Marketplace</NavLink>
+            <NavLink to ={'/rankings'}>Rankings</NavLink>
+            <NavLink to ={'/register'}>Connect a wallet</NavLink>
         </div>
         <div className='footer_head_column'>
             <h2>Join Our Weekly Digest</h2>
