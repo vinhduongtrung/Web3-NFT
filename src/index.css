@@ -1,0 +1,11 @@
+*, *::before, *::after {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #2B2B2B;
+    color: #FFFFFF;
+    font-family: 'Work Sans';
+    letter-spacing: .6px;
+}
