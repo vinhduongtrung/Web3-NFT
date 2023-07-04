@@ -16,11 +16,10 @@ const SFooter = styled.div`
     margin: 0 calc((100% - 1050px)/2);
     @media (max-width: 974px) {
         gap: 49px;
-        margin: 0 calc((100% - 690px)/2);
+        margin: 0 calc((100% - 315px)/2);
     }
     @media (max-width: 375px) {
         gap: 20px;
-        margin: 0 calc((100% - 315px)/2);
     }
 `
 
