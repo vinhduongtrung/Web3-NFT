@@ -1,6 +1,7 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import { ReactComponent as Shopping } from "../assets/shopping.svg";
+import { ReactComponent as Title } from "../assets/logo-title.svg";
 import { ReactComponent as VideoGame } from "../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../assets/twitter.svg";
@@ -37,12 +38,15 @@ const FooterTop = styled.div`
         align-items: center;
     }
     .logo-title {
-        margin-left: 8px;
+        margin-left: 12px;
+        height: 20px;
+        width: 199px;
     }
     h2{
         font-size: 22px;
         font-weight: 700;
-        color: #FFFFFF;
+        background-color: transparent;
+        line-height: 35.2px;
     }
     p, a{
         font-size: 16px;
@@ -65,6 +69,7 @@ const FooterTop = styled.div`
 `
  const FooterBottom = styled.div`
     border-top: 1px solid #FFFFFF;
+    padding-top: 20px;
  `
 const GridContainer = styled.div`
     display: grid;
@@ -79,7 +84,7 @@ const Footer = () => {
         <div className='footer_head_column'>
             <div className='logo'>
                 <Shopping />
-                <h2 className="logo-title">NFT Marketplace</h2>
+                <Title className="logo-title"/>
             </div>
             <p>NFT marketplace UI created with Anima for Figma.</p>
             <p>Join our community</p>
