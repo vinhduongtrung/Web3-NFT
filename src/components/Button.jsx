@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import { ReactComponent as User } from "../assets/user.svg";
+
 const SButton = styled.div`
     display: flex;
     justify-content: center;

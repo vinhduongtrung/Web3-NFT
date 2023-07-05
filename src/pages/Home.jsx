@@ -30,6 +30,14 @@ const SHome = styled.div`
   .howItWork{
     padding: 40px 195px;
   }
+  @media (min-width: 834px) {
+    .hero {
+      padding: 80px 0;
+    }
+    .trendingCollection{
+      padding: 80px 0;
+    }
+  }
 `
 const Home = () => {
   return (
