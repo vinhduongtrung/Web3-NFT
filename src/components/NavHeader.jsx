@@ -99,6 +99,11 @@ const SHeader = styled.header`
         height: 24px;
         }
     }
+    .signUpBtn {
+        height : 60px;
+        background-color:#a259ff;
+        padding: 0px 30px;
+    }
 `
 const HeaderTop = styled.div`
     display: flex;
@@ -140,7 +145,7 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink to ={'/register'}>
-                            <Button logo={<User/>} name="Sign Up" h = "60px" bg="#a259ff" padding="0px 30px"/>
+                            <Button logo={<User/>} name="Sign Up" classname="signUpBtn"/>
                         </NavLink>
                     </li>
                 </ul>
