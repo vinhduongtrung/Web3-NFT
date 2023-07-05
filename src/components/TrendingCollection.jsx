@@ -1,5 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
+import Card from './Card'
 
 const STrending = styled.div`
   display: flex;
@@ -13,7 +14,9 @@ const TrendingCollection = () => {
         <p className="text-tail">Checkout our weekly updated trending collection.</p>
       </div>
       <div className="mid">
-        <div className="image-head"></div>
+        <div className="image-head">
+          <Card/>
+        </div>
       </div>
     </STrending>
   )
