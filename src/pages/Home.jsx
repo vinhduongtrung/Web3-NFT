@@ -1,8 +1,47 @@
 import React from 'react'
+import Hero from "../components/Hero"
+import TrendingCollection from "../components/TrendingCollection"
+import TopCreators from "../components/TopCreators"
+import BrowseCategories from "../components/BrowseCategories"
+import DiscoverMore from "../components/DiscoverMore"
+import NFTHightLight from "../components/NFTHightLight"
+import HowItWork from "../components/HowItWork"
+import { styled } from 'styled-components'
 
+const SHome = styled.div`
+  .hero{
+    padding: 40px 0;
+  }
+  .trendingCollection{
+    padding: 40px;
+  }
+  .topCreators{
+    padding: 40px 195px;
+  }
+  .browseCategories{
+    padding: 40px 0;
+  }
+  .discoverMore{
+    padding: 40px 195px;
+  }
+  .nFTHightLight{
+    padding: 0;
+  }
+  .howItWork{
+    padding: 40px 195px;
+  }
+`
 const Home = () => {
   return (
-    <div>Home</div>
+    <SHome>
+      <Hero/>
+      <TrendingCollection/>
+      <TopCreators/>
+      <BrowseCategories/>
+      <DiscoverMore/>
+      <NFTHightLight/>
+      <HowItWork/>
+    </SHome>
   )
 }
 

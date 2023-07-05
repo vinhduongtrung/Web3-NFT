@@ -12,15 +12,16 @@ function App() {
   return (
     <>
       <Header/>
-      
-      <Routes>
-        <Route path="/" element = {<Home/>}/>
-        <Route path="/register" element = {<AccountRegister/>}/>
-        <Route path="/artist/:id" element = {<Artist/>}/>
-        <Route path="/nft/:id" element = {<NFT/>}/>
-        <Route path="/marketplace" element = {<MarketPlace/>}/>
-        <Route path="/rankings" element = {<Rankings/>}/>
-      </Routes>
+      <div className="wrapper">
+        <Routes>
+          <Route path="/" element = {<Home/>}/>
+          <Route path="/register" element = {<AccountRegister/>}/>
+          <Route path="/artist/:id" element = {<Artist/>}/>
+          <Route path="/nft/:id" element = {<NFT/>}/>
+          <Route path="/marketplace" element = {<MarketPlace/>}/>
+          <Route path="/rankings" element = {<Rankings/>}/>
+        </Routes>
+      </div>
       <Footer/>
     </>
   )
