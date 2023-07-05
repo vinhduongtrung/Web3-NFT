@@ -11,3 +11,13 @@ body {
     font-family: 'Work Sans', sans-serif;
     letter-spacing: .6px;
 }
+.wrapper {
+    margin: 0 13.54%;
+    
+    @media (max-width: 834px) {
+        margin: 0 8.63%;
+    }
+    @media (max-width: 375px) {
+        margin: 0 8%;
+    }
+}
