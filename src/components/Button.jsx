@@ -8,18 +8,14 @@ const SButton = styled.div`
     transition: all 0.3s ease;
     border-radius: 20px;
     gap: 12px;
-    width: ${props=>props.w};
-    height: ${props => props.h};
-    padding: ${props => props.padding};
-    background-color: ${props => props.bg};
     svg {
         width: 20px;
         height: 20px;
     }
 `
-const Button = ({logo, name, w, h , padding, bg}) => {
+const Button = ({logo, name, classname}) => {
   return (
-    <SButton w={w} h={h} padding={padding} bg={bg}>
+    <SButton className={classname}>
         {logo}
         <span>{name}</span>
     </SButton>

@@ -1,12 +1,14 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import { ReactComponent as Shopping } from "../assets/shopping.svg";
+import { ReactComponent as Email } from "../assets/email.svg";
 import { ReactComponent as Title } from "../assets/logo-title.svg";
 import { ReactComponent as VideoGame } from "../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../assets/instagram.svg";
 import { NavLink } from 'react-router-dom';
+import Button from './Button';
 
 
 const SFooter = styled.div`
@@ -67,6 +69,44 @@ const FooterTop = styled.div`
         flex-direction: column;
     }
 `
+const Subcribe = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .btn{
+        color: #ffffff;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        height: 46px;
+        padding: 0px 50px;
+        background-color: #a259ff;
+    }
+    .email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        border-radius: 20px;
+        gap: 12px;
+        background-color: #ffffff;
+        padding: 16px 20px;
+        input {
+            border: 0;
+            width: 100%;
+            background-color: transparent;
+            line-height: 22px;
+            &:focus{
+                outline: 0;
+                outline-color: transparent;
+                outline-style: none;
+            }
+        }
+    }
+    @media (min-width: 834px) {
+        flex-direction: row;
+    }
+`
  const FooterBottom = styled.div`
     border-top: 1px solid #FFFFFF;
     padding-top: 20px;
@@ -104,8 +144,14 @@ const Footer = () => {
         <div className='footer_head_column'>
             <h2>Join Our Weekly Digest</h2>
             <p>Get exclusive promotions & updates straight to your inbox.</p>
-            <p>Enter email address</p>
-            <p>Subcribe</p>
+            <Subcribe>
+                <div className="btn email">
+                    <input type="email" placeholder='Enter Your Email Address'/>
+                </div>
+                <NavLink to ={'/register'}>
+                    <Button classname="btn" logo={<Email/>} name="Subcribe"/>
+                </NavLink>
+            </Subcribe>
         </div>
         
     </FooterTop>
