@@ -1,0 +1,10 @@
+/*# sourceMappingURL=AccountRegister.css.map */
+.content{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    align-self: stretch;
+    .CreateAccount{
+        display: block;
+    }
+}
