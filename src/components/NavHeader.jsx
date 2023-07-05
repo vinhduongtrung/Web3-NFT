@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { styled } from 'styled-components'
 import { ReactComponent as Shopping } from "../assets/shopping.svg";
 import { ReactComponent as Title } from "../assets/logo-title.svg";
+import { ReactComponent as User } from "../assets/user.svg";
 import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
 import { NavLink } from 'react-router-dom';
+import Button from './Button';
 
 const SHeader = styled.header`
     display: flex;
@@ -34,6 +36,7 @@ const SHeader = styled.header`
         margin: 0;
         padding: 0;
         display: flex;
+        align-items: center;
     }
     .nav-links li {
         list-style: none;
@@ -80,7 +83,7 @@ const SHeader = styled.header`
         .nav-links ul li {
             text-align: center;
         }
-        .active {
+        .actives {
             display: flex;
             justify-content: center;
         }
@@ -118,12 +121,28 @@ const Header = () => {
                 </NavLink>
                 <NavMenu className="toggle-button" onClick={toggleActive}/>
             </HeaderTop>
-            <div className={isActive ? "nav-links active" : "nav-links"}>
+            <div className={isActive ? "nav-links actives" : "nav-links"}>
                 <ul>
-                    <li><NavLink to ={'/marketplace'}>Marketplace</NavLink></li>
-                    <li><NavLink to ={'/rankings'}>Rankings</NavLink></li>
-                    <li><NavLink to ={'/register'}>Connect a wallet</NavLink></li>
-                    <li><NavLink to ={'/register'}>Sign up</NavLink></li>
+                    <li>
+                        <NavLink to ={'/marketplace'}>
+                            <Button name="Marketplace"/>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to ={'/rankings'}>
+                            <Button name="Rankings"/>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to ={'/register'}>
+                            <Button name="Connect a wallet"/>
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to ={'/register'}>
+                            <Button logo={<User/>} name="Sign Up" h = "60px" bg="#a259ff" padding="0px 30px"/>
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </SHeader>
