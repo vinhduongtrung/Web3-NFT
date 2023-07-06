@@ -28,7 +28,6 @@ const HeaderSublineStyled = styled.div`
     
     @media only screen and (min-width: 376px) and (max-width: 835px) {
       font-size: 24px;
-      line-height: 38px;
       margin: 0 auto;
       width: 100%;
       display: block;
