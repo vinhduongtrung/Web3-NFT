@@ -1,4 +1,6 @@
 import { styled } from 'styled-components'
+import { AvatarAndName } from './Card/AvatarAndName'
+import CollectionInfo from './Card/CollectionInfo'
 
 const Container = styled.div`
   display: flex;
@@ -66,13 +68,7 @@ const CardCollection = ({ item }) => {
           <div className="child more">{item.collection.total}+</div>
         </div>
       </div>
-      <div className="collection-info">
-        <div className="collection-name">{item.collection.name}</div>
-        <div className="user-info">
-          <img src={item.userInfo.avatar} />
-          <span>{item.userInfo.username}</span>
-        </div>
-      </div>
+      <CollectionInfo collection={item.collection.name} avatar={item.userInfo.avatar} name={item.userInfo.username} />
     </Container>
   )
 }
