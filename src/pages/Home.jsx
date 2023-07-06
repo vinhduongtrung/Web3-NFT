@@ -4,7 +4,6 @@ import Hero from "../components/Hero"
 import TopCreators from "../components/TopCreators"
 import BrowseCategories from "../components/BrowseCategories"
 import DiscoverMore from "../components/DiscoverMore"
-import NFTHightLight from "../components/NFTHightLight"
 import HowItWork from "../components/HowItWork"
 import { styled } from 'styled-components'
 import Trending from '../components/Trending'
@@ -48,7 +47,6 @@ const Home = () => {
       <TopCreators/>
       <BrowseCategories/>
       <DiscoverMore/>
-      <NFTHightLight/>
       <HowItWork/>
     </SHome>
   )
