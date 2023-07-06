@@ -8,43 +8,71 @@ import extra22 from "../assets/extra-2.2.jpg"
 import best3 from "../assets/best-nft-3.jpg"
 import extra31 from "../assets/extra-3.1.jpg"
 import extra32 from "../assets/extra-3.2.jpg"
+import mrfox from "../assets/mrfox.jpg"
+import shroom from "../assets/shroom.jpg"
+import robot from "../assets/robot.jpg"
 import { styled } from 'styled-components'
 const data = [
   {
-    username: "MrFox",
-    collection: "Dsgn Animals",
-    best: best1,
-    extra: [
-      { item: extra11 },
-      { item: extra12 },
-      { total : 1025}
-    ]
+    userInfo: {
+      username: "MrFox",
+      avatar: mrfox
+    },
+    collection: {
+      name: "Dsgn Animals",
+      total: 1025,
+      best: {
+        id: 1,
+        url: best1
+      },
+      extra: [
+        { url: extra11, id: 2 },
+        { url: extra12, id: 3 },
+      ]
+    },
   },
   {
-    username: "Shroomie",
-    collection: "Magic Mushrooms",
-    best: best2,
-    extra: [
-      { item: extra21 },
-      { item: extra22 },
-      { total : 1025}
-    ]
+    userInfo: {
+      username: "Shroomie",
+      avatar: shroom
+    },
+    collection: {
+      name: "Magic Mushrooms",
+      total: 1025,
+      best: {
+        id: 4,
+        url: best2
+      },
+      extra: [
+        { url: extra21, id: 5 },
+        { url: extra22, id: 6 },
+      ]
+    },
   },
   {
-    username: "BeKind2Robots",
-    collection: "Disco Machines",
-    best: best3,
-    extra: [
-      { item: extra31 },
-      { item: extra32 },
-      { total : 1025}
-    ]
+    userInfo: {
+      username: "BeKind2Robots",
+      avatar: robot
+    },
+    collection: {
+      name: "Disco Machines",
+      total: 1025,
+      best: {
+        id: 7,
+        url: best3
+      },
+      extra: [
+        { url: extra31, id: 8 },
+        { url: extra32, id: 9 },
+      ]
+    },
   },
 ]
-const SCard = styled.div`
+const CardContainer = styled.div`
   .product-extra {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
+    gap: 15px;
 }
 
 .best-product {
@@ -52,17 +80,16 @@ const SCard = styled.div`
     background-position: center;
     background-size: contain;
     width: 100%;
-    height: 375px;
+    height: 315px;
     margin:0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
 }
 .child {
-    width: 80px;
-    height: 80px;
+    height: 95px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     border-radius: 20px;
 }
 .more {
@@ -70,28 +97,63 @@ const SCard = styled.div`
   font-size: 16px;
   font-weight: 700;
   line-height: 22.4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.collection-info {
+  display: flex;
+  flex-direction: column;
+  .collection-name {
+    line-height: 30.8px;
+    color: #ffffff;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .user-info {
+    display: flex;
+    gap: 12px;
+  }
+}
+@media (min-width: 834px) {
+  .child {
+    height: 100px;
+  }
 }
 `
 const Card = () => {
   return (
-    <SCard>
+    <CardContainer>
       {
         data.map((item) =>
-        <>
-          <div class="best-product" key={item.best} style={{backgroundImage: `url(${item.best})`}}>
-          </div>
-          <div class="product-extra">
-              {item.extra.map((e)=>
-                e.item ? <div class="child" style={{backgroundImage: `url(${e.item})`}}></div>
-                :<div class="child more">{e.total}+</div>
-              )}
-          </div>
-          <div>{item.collection}</div>
-          <div>{item.username}</div>
-        </>
+          <CardCollection key={item.collection.name} item={item}/>
         )
       }
-    </SCard>
+    </CardContainer>
+  )
+}
+const CardCollection = ({item}) => {
+  return (
+    <>
+      <div className='photo'>
+        <div className="best-product"
+          style={{ backgroundImage: `url(${item.collection.best.url})` }}></div>
+        <div className="product-extra">
+          {item.collection.extra.map((e) =>
+            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.url})` }}></div>
+          )}
+          <div className="child more">{item.collection.total}+</div>
+        </div>
+      </div>
+      <div className="collection-info">
+        <div className="collection-name">{item.collection.name}</div>
+        <div className="user-info">
+          <img src={item.userInfo.avatar} />
+          <span>{item.userInfo.username}</span>
+        </div>
+      </div>
+    </>
   )
 }
 
