@@ -60,7 +60,7 @@ const SHeader = styled.header`
         background-color: white;
         border-radius: 10px;
     }
-    @media (max-width: 834px) {
+    @media (max-width: 1024px) {
         display: block;
         align-items: flex-start;
         padding: 15px 50px;
