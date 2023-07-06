@@ -65,7 +65,7 @@ const FooterTop = styled.div`
         fill: #858584;
         color: white;
     }
-    @media (max-width: 834px) {
+    @media (max-width: 1024px) {
         flex-direction: column;
     }
 `
