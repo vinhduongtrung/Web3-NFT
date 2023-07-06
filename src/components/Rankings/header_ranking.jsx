@@ -2,7 +2,7 @@ import styled from "styled-components";
 const HeaderSublineStyled = styled.div`
   align-items: center;
     align-self: stretch;
-    background-color: var(--background);
+    /* background-color: var(--background); */
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -28,7 +28,6 @@ const HeaderSublineStyled = styled.div`
     
     @media only screen and (min-width: 376px) and (max-width: 835px) {
       font-size: 24px;
-      line-height: 38px;
       margin: 0 auto;
       width: 100%;
       display: block;
