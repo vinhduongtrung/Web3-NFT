@@ -110,6 +110,10 @@ const Subcribe = styled.div`
  const FooterBottom = styled.div`
     border-top: 1px solid #FFFFFF;
     padding-top: 20px;
+    color: #cccccc;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
  `
 const GridContainer = styled.div`
     display: grid;

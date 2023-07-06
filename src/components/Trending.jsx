@@ -1,8 +1,8 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
-import TextHead from "../components/Text/TextHead"
-import TextTitle from "../components/Text/TextTitle"
+import TextHead from "./Text/TextHead"
+import TextTitle from "./Text/TextTitle"
 const STrending = styled.div`
   display: flex;
   flex-direction: column;
@@ -96,7 +96,7 @@ const data = [
   },
 ]
 
-const TrendingCollection = () => {
+const Trending = () => {
   return (
     <STrending>
       <div className="top">
@@ -116,4 +116,4 @@ const TrendingCollection = () => {
   )
 }
 
-export default TrendingCollection
+export default Trending

@@ -11,7 +11,6 @@ const SAvatar = styled.div`
 `
 
 const Avatar = ({radius, cover}) => {
-  console.log(cover);
   return (
     <SAvatar radius = {radius} cover = {cover}/>
   )
