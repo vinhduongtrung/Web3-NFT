@@ -57,10 +57,11 @@ const Wrapper = styled.div`
     height: 100px;
   }
   .best-product {
+    width: 330px;
     height: 330px;
   }
 }
-  @media (max-width: 1920px) {
+  @media (min-width: 1024px) {
     grid-template-columns:repeat(3, minmax(330px, 1fr));
   }
 `

@@ -13,7 +13,7 @@ const Container = styled.div`
 .best-product {
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: contain;
     width: 100%;
     height: 315px;
     margin:0 auto;
