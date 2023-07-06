@@ -1,8 +1,8 @@
-import React from 'react'
 
+import LayoutRanking from '../components/Rankings/Layout';
 const Rankings = () => {
   return (
-    <div>Rankings</div>
+    <LayoutRanking/>
   )
 }
 
