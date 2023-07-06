@@ -1,6 +1,6 @@
 import React from 'react'
 import { styled } from 'styled-components'
-import CardCollection from './CardCollection'
+import CardCollection from './Card/CardCollection'
 import TextHead from "../components/Text/TextHead"
 import TextTitle from "../components/Text/TextTitle"
 const STrending = styled.div`

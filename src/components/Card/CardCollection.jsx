@@ -1,6 +1,5 @@
 import { styled } from 'styled-components'
-import { AvatarAndName } from './Card/AvatarAndName'
-import CollectionInfo from './Card/CollectionInfo'
+import CollectionInfo from './CollectionInfo'
 
 const Container = styled.div`
   display: flex;
