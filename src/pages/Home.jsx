@@ -1,12 +1,13 @@
 import React from 'react'
 import Hero from "../components/Hero"
-import TrendingCollection from "../components/TrendingCollection"
+
 import TopCreators from "../components/TopCreators"
 import BrowseCategories from "../components/BrowseCategories"
 import DiscoverMore from "../components/DiscoverMore"
 import NFTHightLight from "../components/NFTHightLight"
 import HowItWork from "../components/HowItWork"
 import { styled } from 'styled-components'
+import Trending from '../components/Trending'
 
 const SHome = styled.div`
   .hero{
@@ -43,7 +44,7 @@ const Home = () => {
   return (
     <SHome>
       <Hero/>
-      <TrendingCollection/>
+      <Trending/>
       <TopCreators/>
       <BrowseCategories/>
       <DiscoverMore/>

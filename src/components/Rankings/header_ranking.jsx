@@ -2,7 +2,7 @@ import styled from "styled-components";
 const HeaderSublineStyled = styled.div`
   align-items: center;
     align-self: stretch;
-    background-color: var(--background);
+    /* background-color: var(--background); */
     display: flex;
     flex-direction: column;
     gap: 40px;
