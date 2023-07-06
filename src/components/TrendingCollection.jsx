@@ -1,39 +1,13 @@
 import React from 'react'
 import { styled } from 'styled-components'
 import CardCollection from './CardCollection'
-import best1 from "../assets/best-nft-1.jpg"
-import extra11 from "../assets/extra-1.1.jpg"
-import extra12 from "../assets/extra-1.2.jpg"
-import best2 from "../assets/best-nft-2.jpg"
-import extra21 from "../assets/extra-2.1.jpg"
-import extra22 from "../assets/extra-2.2.jpg"
-import best3 from "../assets/best-nft-3.jpg"
-import extra31 from "../assets/extra-3.1.jpg"
-import extra32 from "../assets/extra-3.2.jpg"
-import mrfox from "../assets/mrfox.jpg"
-import shroom from "../assets/shroom.jpg"
-import robot from "../assets/robot.jpg"
-
+import TextHead from "../components/Text/TextHead"
+import TextTitle from "../components/Text/TextTitle"
 const STrending = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-  
-  .text-head {
-    line-height: 39.2px;
-    color: #ffffff;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  .text {
-    color: #ffffff;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-  }
-  
+
   @media (min-width: 1440px) {
     .text-head {
       line-height: 45.6px;
@@ -69,54 +43,54 @@ const data = [
   {
     userInfo: {
       username: "MrFox",
-      avatar: mrfox
+      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder@2x.png"
     },
     collection: {
       name: "Dsgn Animals",
       total: 1025,
       best: {
         id: 1,
-        url: best1
+        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder-1@2x.png"
       },
       extra: [
-        { url: extra11, id: 2 },
-        { url: extra12, id: 3 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder@2x.png", id: 2 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-1@2x.png", id: 3 },
       ]
     },
   },
   {
     userInfo: {
       username: "Shroomie",
-      avatar: shroom
+      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-2@2x.png"
     },
     collection: {
       name: "Magic Mushrooms",
       total: 1025,
       best: {
         id: 4,
-        url: best2
+        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder@2x.png"
       },
       extra: [
-        { url: extra21, id: 5 },
-        { url: extra22, id: 6 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-2@2x.png", id: 5 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-3@2x.png", id: 6 },
       ]
     },
   },
   {
     userInfo: {
       username: "BeKind2Robots",
-      avatar: robot
+      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-54@2x.png"
     },
     collection: {
       name: "Disco Machines",
       total: 1025,
       best: {
         id: 7,
-        url: best3
+        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder-5@2x.png"
       },
       extra: [
-        { url: extra31, id: 8 },
-        { url: extra32, id: 9 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-10@2x.png", id: 8 },
+        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-11@2x.png", id: 9 },
       ]
     },
   },
@@ -126,8 +100,8 @@ const TrendingCollection = () => {
   return (
     <STrending>
       <div className="top">
-        <p className="text-head">Trending Collection</p>
-        <p className="text">Checkout our weekly updated trending collection.</p>
+        <TextHead text="Trending Collection"/>
+        <TextTitle text="Checkout our weekly updated trending collection"/>
       </div>
       <div className="mid">
         <Wrapper>
