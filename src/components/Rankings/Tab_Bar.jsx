@@ -16,6 +16,11 @@ gap: 10px;
 display: flex;
 background: #2B2B2B;
 left: 20px;
+@media only screen and (max-width: 835px) {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 874px;
+}
 }
 `;
 

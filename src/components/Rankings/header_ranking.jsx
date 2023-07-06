@@ -6,7 +6,7 @@ const HeaderSublineStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 40px;
-    height: auto;
+    height: 100%;
     mix-blend-mode: normal;
     padding: 80px 0px;
   .header-subline {
@@ -17,7 +17,24 @@ const HeaderSublineStyled = styled.div`
     display: flex;
     flex-direction: column;
     gap: 20px;
- 
+    @media only screen and (max-width: 376px) {
+      font-size: 22px;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 375px;
+      display: block;
+      align-items: center;
+    }
+    
+    @media only screen and (min-width: 376px) and (max-width: 835px) {
+      font-size: 24px;
+      line-height: 38px;
+      margin: 0 auto;
+      width: 100%;
+      display: block;
+      align-items: center;
+      max-width: 835px;
+    }
   }
   .headline{
   
@@ -55,18 +72,29 @@ text-align: left;
     background-color: transparent;
     display: flex;
     gap: 10px;
-    position: relative;
+
+    /* @media only screen and (max-width: 376px){
+font-size: 22px;
+width: 100%;
+max-width: 315px;
+margin: 0 auto;
+display: block;
+} */
+
   }
-  .check-out-top-ranking {
+    .check-out-top-ranking {
+     
     font-family: Work Sans;
 font-size: 22px;
 font-weight: 400;
 line-height: 35px;
 letter-spacing: 0em;
 text-align: left;
-width: 100%;
 color: white;
-  }
+height: auto;
+
+}
+
 `;
 const Header = () => {
   return (
