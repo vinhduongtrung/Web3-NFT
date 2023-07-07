@@ -11,13 +11,13 @@ const SHome = styled.div`
   .hero{
     padding: 40px 0;
   }
-  .trendingCollection{
-    padding: 40px;
+  .trending{
+    padding: 40px 0;
   }
   .topCreators{
     padding: 40px 195px;
   }
-  .browseCategories{
+  .category{
     padding: 40px 0;
   }
   .discoverMore{
@@ -33,7 +33,10 @@ const SHome = styled.div`
     .hero {
       padding: 80px 0;
     }
-    .trendingCollection{
+    .trending{
+      padding: 80px 0;
+    }
+    .category {
       padding: 80px 0;
     }
   }

@@ -7,8 +7,27 @@ const Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
   .box {
     height: 100px;
-    background-color: red;
+    background-color: #3b3b3b;
     margin-block-end: 30px;
+  }
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    .box {
+        margin-inline-end: 30px;
+        :nth-child(3n){
+            margin-inline-end: 0;
+        }
+    }
+    
+  }
+  @media(min-width: 834px) {
+    .box {
+        margin-inline-end: 30px;
+        :nth-child(2n){
+            margin-inline-end: 0;
+        }
+    }
+    
   }
 `
 

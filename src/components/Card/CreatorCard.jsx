@@ -1,6 +1,4 @@
-import { styled } from 'styled-components'
 import Avatar from './Avatar';
-
 
 const CreatorCard = ({item}) => {
   const {cover, name, total_sale} = item;
@@ -8,7 +6,7 @@ const CreatorCard = ({item}) => {
     <div className='box'>
       <Avatar radius="60px" cover={cover}/>
       <p>{name}</p>
-      <p>{total_sale}</p>
+      <p>Total Sales: {total_sale} ETH</p>
     </div>
   )
 }
