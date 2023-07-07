@@ -1,4 +1,4 @@
-import NFTHightLight from "./NFTHightLight"
+import NFTContainer from "./NFTContainer"
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
 
@@ -7,8 +7,7 @@ const Discover = () => {
     <>
         <TextHead text="Discover More Nfts"/>
         <TextTitle text="Explore New Trending Nfts"/>
-
-        <NFTHightLight/>
+        <NFTContainer/>
     </>
   )
 }

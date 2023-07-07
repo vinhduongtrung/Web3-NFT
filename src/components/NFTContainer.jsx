@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   }
 `
 
-const NFTHightLight = () => {
+const NFTContainer = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const getNFT = async () => {
@@ -70,4 +70,4 @@ const NFTHightLight = () => {
   )
 }
 
-export default NFTHightLight
+export default NFTContainer
