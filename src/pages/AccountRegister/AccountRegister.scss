@@ -1,9 +1,4 @@
-:root{
-    --form-height:691px;
-    --form-width: 1035px;
 
-  }
-    
 
 
   .container{
@@ -17,6 +12,9 @@
     margin-bottom: 40px;
     margin-left: auto;
     margin-right: auto;
+    --form-height:691px;
+    --form-width: 1035px;
+    
     
   }
 
@@ -420,15 +418,14 @@
   */
 
   @media (max-width: 834px) {
-    :root{
-      --form-height:691px;
-      --form-width: 733px;
-  
-    }
+    
 
     .container {
       width: 100%;
       box-shadow: none;
+      --form-height:691px;
+      --form-width: 733px;
+  
   }
   .form .sign-in, .form .sign-up{
     padding: 0 0;
