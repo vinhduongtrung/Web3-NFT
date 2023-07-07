@@ -1,4 +1,3 @@
-import React from 'react'
 import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
 import TextHead from "./Text/TextHead"
@@ -98,11 +97,12 @@ const data = [
 
 const Trending = () => {
   return (
-    <STrending>
-      <div className="top">
-        <TextHead text="Trending Collection"/>
-        <TextTitle text="Checkout our weekly updated trending collection"/>
-      </div>
+    <div className="trending">
+      <STrending>
+        <div className="top">
+          <TextHead text="Trending Collection" />
+          <TextTitle text="Checkout our weekly updated trending collection" />
+        </div>
         <Wrapper>
           {
             data.map((item) =>
@@ -110,7 +110,8 @@ const Trending = () => {
             )
           }
         </Wrapper>
-    </STrending>
+      </STrending>
+    </div>
   )
 }
 
