@@ -8,17 +8,11 @@ import HowItWork from "../components/HowItWork"
 import Trending from '../components/Trending'
 
 const SHome = styled.div`
-  .hero{
-    padding: 40px 0;
-  }
-  .trending{
+  .hero, .trending, .category, .howItWork{
     padding: 40px 0;
   }
   .topCreators{
     padding: 40px 195px;
-  }
-  .category{
-    padding: 40px 0;
   }
   .discoverMore{
     padding: 40px 195px;
@@ -26,20 +20,8 @@ const SHome = styled.div`
   .nFTHightLight{
     padding: 0;
   }
-  .howItWork{
-    padding: 40px 0;
-  }
   @media (min-width: 834px) {
-    .hero {
-      padding: 80px 0;
-    }
-    .trending{
-      padding: 80px 0;
-    }
-    .category {
-      padding: 80px 0;
-    }
-    .howItWork{
+    .hero, .trending, .category, .howItWork {
       padding: 80px 0;
     }
   }

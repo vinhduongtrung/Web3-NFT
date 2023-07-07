@@ -67,9 +67,9 @@ const SHero = styled.div`
     gap: 20px;
   }
   @media (min-width: 834px) {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 30px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 const STop = styled.div`
