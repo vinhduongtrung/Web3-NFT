@@ -2,7 +2,7 @@ import NFTHightLight from "./NFTHightLight"
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
 
-const DiscoverMore = () => {
+const Discover = () => {
   return (
     <>
         <TextHead text="Discover More Nfts"/>
@@ -13,4 +13,4 @@ const DiscoverMore = () => {
   )
 }
 
-export default DiscoverMore
+export default Discover

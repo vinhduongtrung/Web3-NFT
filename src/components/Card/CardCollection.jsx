@@ -3,6 +3,7 @@ import CollectionInfo from './CollectionInfo'
 
 const Container = styled.div`
   display: flex;
+  flex: 1 1 330px;
   flex-direction: column;
   gap: 15px;
   .product-extra {
