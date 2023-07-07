@@ -1,7 +1,7 @@
 import Header from "./components/NavHeader"
 import Footer from "./components/Footer"
 import Home from "./pages/Home"
-import AccountRegister from "./pages/AccountRegister/AccountRegister"
+// import AccountRegister from "./pages/AccountRegister/AccountRegister"
 import Artist from "./pages/Artist"
 import NFT from "./pages/NFT"
 import MarketPlace from "./pages/MarketPlace"
@@ -15,7 +15,7 @@ function App() {
       <div className="wrapper">
         <Routes>
           <Route path="/" element = {<Home/>}/>
-          <Route path="/register" element = {<AccountRegister/>}/>
+          {/* <Route path="/register" element = {<AccountRegister/>}/> */}
           <Route path="/artist/:id" element = {<Artist/>}/>
           <Route path="/nft/:id" element = {<NFT/>}/>
           <Route path="/marketplace" element = {<MarketPlace/>}/>

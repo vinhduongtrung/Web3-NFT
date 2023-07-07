@@ -3,11 +3,11 @@ import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
+
 const STrending = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
-
   @media (min-width: 1440px) {
     .text-head {
       line-height: 45.6px;
@@ -103,7 +103,6 @@ const Trending = () => {
         <TextHead text="Trending Collection"/>
         <TextTitle text="Checkout our weekly updated trending collection"/>
       </div>
-      <div className="mid">
         <Wrapper>
           {
             data.map((item) =>
@@ -111,7 +110,6 @@ const Trending = () => {
             )
           }
         </Wrapper>
-      </div>
     </STrending>
   )
 }

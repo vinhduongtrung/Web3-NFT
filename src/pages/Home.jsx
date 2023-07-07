@@ -1,11 +1,10 @@
 import React from 'react'
 import Hero from "../components/Hero"
-
-import TopCreators from "../components/TopCreators"
-import BrowseCategories from "../components/BrowseCategories"
-import DiscoverMore from "../components/DiscoverMore"
-import HowItWork from "../components/HowItWork"
 import { styled } from 'styled-components'
+import TopCreators from "../components/TopCreators"
+import Category from "../components/Category"
+import Discover from "../components/Discover"
+import HowItWork from "../components/HowItWork"
 import Trending from '../components/Trending'
 
 const SHome = styled.div`
@@ -45,8 +44,8 @@ const Home = () => {
       <Hero/>
       <Trending/>
       <TopCreators/>
-      <BrowseCategories/>
-      <DiscoverMore/>
+      <Category/>
+      <Discover/>
       <HowItWork/>
     </SHome>
   )
