@@ -1,8 +1,6 @@
-import React from 'react'
-
 const HowItWork = () => {
   return (
-    <div>HowItWork</div>
+    <div className='howItWork'>HowItWork</div>
   )
 }
 

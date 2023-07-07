@@ -14,20 +14,26 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     .box {
         margin-inline-end: 30px;
-        :nth-child(3n){
+        &:nth-child(4n){
             margin-inline-end: 0;
         }
     }
-    
   }
-  @media(min-width: 834px) {
+  @media(max-width: 1439px) {
     .box {
         margin-inline-end: 30px;
-        :nth-child(2n){
+        &:nth-child(2n){
             margin-inline-end: 0;
         }
     }
-    
+    @media(max-width: 833px) {
+        .box {
+            margin-inline-end: 30px;
+            &:nth-child(2n){
+            margin-inline-end: 30px;
+        }
+        }
+    }
   }
 `
 

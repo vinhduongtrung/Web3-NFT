@@ -20,12 +20,10 @@ const STrending = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
   
   @media (min-width: 834px) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 30px;
   .child {
     height: 100px;
   }

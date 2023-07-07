@@ -27,7 +27,7 @@ const SHome = styled.div`
     padding: 0;
   }
   .howItWork{
-    padding: 40px 195px;
+    padding: 40px 0;
   }
   @media (min-width: 834px) {
     .hero {
@@ -39,17 +39,20 @@ const SHome = styled.div`
     .category {
       padding: 80px 0;
     }
+    .howItWork{
+      padding: 80px 0;
+    }
   }
 `
 const Home = () => {
   return (
     <SHome>
-      <Hero/>
-      <Trending/>
-      <TopCreators/>
-      <Category/>
-      <Discover/>
-      <HowItWork/>
+      <Hero />
+      <Trending />
+      <TopCreators />
+      <Category />
+      <Discover />
+      <HowItWork />
     </SHome>
   )
 }
