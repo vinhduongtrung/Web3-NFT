@@ -3,12 +3,11 @@ import { useEffect, useState } from "react"
 import NFTCard from './Card/NFTCard';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  @media (min-width: 834px) {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  gap: 30px;
+
+  @media (min-width: 834px) {
+  grid-template-columns: repeat(2, minmax(330px, 1fr));
   .child {
     height: 100px;
   }
