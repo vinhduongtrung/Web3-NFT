@@ -7,19 +7,19 @@ import Lockkey from '../../assets/Account/Lockkey.svg'
 
 const AccountRegister = () => {
   useEffect(() => {
-    var overlay = document.getElementById("overlay");
+    let overlay = document.getElementById("overlay");
 
     // Buttons to 'switch' the page
-    var openSignUpButton = document.getElementById("slide-left-button");
-    var openSignInButton = document.getElementById("slide-right-button");
+    let openSignUpButton = document.getElementById("slide-left-button");
+    let openSignInButton = document.getElementById("slide-right-button");
     
     // The sidebars
-    var leftText = document.getElementById("sign-in");
-    var rightText = document.getElementById("sign-up");
+    let leftText = document.getElementById("sign-in");
+    let rightText = document.getElementById("sign-up");
     
     // The forms
-    var accountForm = document.getElementById("sign-in-info")
-    var signinForm = document.getElementById("sign-up-info");
+    let accountForm = document.getElementById("sign-in-info")
+    let signinForm = document.getElementById("sign-up-info");
     
     // Open the Sign Up page
     const openSignUp = () =>{
