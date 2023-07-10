@@ -3,10 +3,9 @@ const HeaderSublineStyled = styled.div`
   align-items: center;
     align-self: stretch;
     /* background-color: var(--background); */
-    display: flex;
     flex-direction: column;
     gap: 40px;
-    height: 100%;
+    height: auto;
     mix-blend-mode: normal;
     padding: 80px 0px;
   .header-subline {
@@ -22,17 +21,19 @@ const HeaderSublineStyled = styled.div`
       margin: 0 auto;
       width: 100%;
       max-width: 375px;
-      display: block;
+      /* display: block; */
       align-items: center;
+      gap: 20px;
     }
     
     @media only screen and (min-width: 376px) and (max-width: 835px) {
       font-size: 24px;
       margin: 0 auto;
       width: 100%;
-      display: block;
+      /* display: block; */
       align-items: center;
       max-width: 835px;
+      gap: 20px;
     }
   }
   .headline{

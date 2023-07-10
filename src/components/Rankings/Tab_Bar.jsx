@@ -3,6 +3,14 @@ const TabBarStyled = styled.div`
     width: 100%;
     height: auto;
 .tab-bar-before {
+  //styleName: H5 - Work Sans;
+  color: #858584;
+font-family: Work Sans;
+font-size: 22px;
+font-weight: 600;
+line-height: 31px;
+letter-spacing: 0em;
+text-align: center;
     justify-content: space-between;
   align-items: center;
     display: flex;
@@ -11,6 +19,7 @@ const TabBarStyled = styled.div`
   height: auto;
 padding: 0px 10px 0px 10px;
 gap: 10px;
+margin: 20px;
 /* background: #2B2B2B; */
 /* left: 20px; */
 }
@@ -25,10 +34,20 @@ gap: 10px;
     height: auto;
 }
 .tab-bar-mobile-after {
-    display: none; /* Hide video by default */
+    display: flex; /* Hide video by default */
     flex-direction: row;
-  max-width: 100%;
+width: 100%;
   height: auto;
+  /* max-width: 375px; */
+  padding: 0px 20px 0px 20px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  @media only screen and (min-width: 376px) {
+    display: none;
+  }
+  @media only screen and (min-width: 835px) {
+    display: none;
+  }
 }
 @media (max-width: 376px) { /* Media query for mobile devices */
   .tab-bar-before {
@@ -36,25 +55,25 @@ gap: 10px;
     flex-direction: row;
   }
 
-  .tab-bar-mobile-after {
-    display: flex; /* Show video on mobile */
-    max-width: 375px;
-    width:100%; /* Example width for mobile */
-    height: auto;
-  justify-content: space-between;
-    margin-bottom: 20px;
-  }
-
 }
 `;
+  // /* .tab-bar-mobile-after {
+  //   display: flex; /* Show video on mobile */
+  //   max-width: 375px;
+  //   width:100%; /* Example width for mobile */
+  //   height: auto;
+  // justify-content: space-between;
+  // color: #858584;
+  //   margin-bottom: 20px;
+  // } */
 
 const TabBar = () => {
     return(
         <TabBarStyled>
             <div className="tab-bar-before">
                 <p>Today</p>
-                <p>This week</p>
-                <p>This month</p>
+                <p>This Week</p>
+                <p>This Month</p>
                 <p>All time</p>
             </div>
             <div className="tab-bar-mobile">
@@ -62,7 +81,7 @@ const TabBar = () => {
                 <p>1d</p>
                 <p>7d</p>
                 <p>30d</p>
-                <p>all time</p>
+                <p>All Time</p>
                 </div>
                 
             </div>

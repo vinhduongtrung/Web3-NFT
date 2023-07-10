@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import '../AccountRegister/AccountRegister.css'
 import User from '../../assets/Account/User.svg'
 import email from '../../assets/Account/Email.svg'
