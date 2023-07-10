@@ -40,40 +40,29 @@ const WrapperItemStyled = styled.div`
     width: 215px;
    } */
     @media (min-width: 375px) and (max-width: 835px) {
-      width: 80px;
-      height: auto;
+      width: auto;
+      height: 22px;
     }
   }
   .table-header-right-stats {
     display: flex;
-    width: 530px;
-    
+    width: auto;
   }
 `;
 const Volume = styled.div`
   width: 160px;
   align-self: stretch;
   color: #858584;
-
     letter-spacing: 0.00px;
     line-height: 22.4px;
     margin-top: -1.00px;
     mix-blend-mode: normal;
-    position: relative;
     text-align: left;
     white-space: nowrap;
-
   @media screen and (max-width: 376px) {
     align-self: stretch;
-    color: #858584;
     width: 100%;
-    letter-spacing: 0.00px;
     line-height: 13.2px;
-    margin-top: -1.00px;
-    mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
   }
 `;
 const Sold = styled.div`

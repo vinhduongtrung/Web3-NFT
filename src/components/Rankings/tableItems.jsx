@@ -58,11 +58,11 @@ const StyledTableItemCard = styled.div`
     display: flex;
     background-color: transparent;
     align-items: center;
-    width: 400px;
+    width: 250px;
   }
   .right-table-Items-stats {
     display: flex;
-    width: 530px;
+    width: 50px;
     align-items: center;
    
   }
@@ -71,7 +71,7 @@ const StyledTableItemCard = styled.div`
     align-items: center;
     justify-content: center;
     gap: 20px;
-    width: 50px;
+    /* width: 50px; */
   }
 
 `;
