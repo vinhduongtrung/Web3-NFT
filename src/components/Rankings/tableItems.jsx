@@ -10,42 +10,26 @@ const StyledTableItemCard = styled.div`
   background: #3b3b3b;
   flex-direction: column;
   margin-top: 20px;
+  align-items: center;
   @media only screen and (max-width: 376px) {
-    display: flex;
   width: 315px;
   height: 50px;
-  border-radius: 20px;
-  padding: 12px 0px 12px 0px;
-  gap: 10px;
-  margin-bottom: 20px;
-  background: #3b3b3b;
-  flex-direction: column;
-  margin-top: 20px;
   justify-content: center;
   }
   @media only screen and (min-width: 376px) and (max-width: 835px) {
-    display: flex;
-  width: 690px;
+  width: auto;
   height: 60px;
-  border-radius: 20px;
-  padding: 12px 0px 12px 0px;
-  gap: 10px;
-  margin-bottom: 20px;
-  background: #3b3b3b;
-  flex-direction: column;
-  margin-top: 20px;
   justify-content: center;
   }
   .img-artist {
     width: 48px;
     height: 48px;
-    @media only screen and (max-width: 895px) {
+    @media only screen and (max-width: 835px) {
       height: 24px;
       width: 24px;
     }
   }
   .table-items {
-    
     align-items: center;
     width: 100%;
     height: auto;
@@ -58,19 +42,18 @@ const StyledTableItemCard = styled.div`
     display: flex;
     background-color: transparent;
     align-items: center;
-    width: 250px;
+    width: 100%;
   }
   .right-table-Items-stats {
     display: flex;
-    width: 50px;
+    width: auto;
     align-items: center;
    
   }
   .artist-card {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 20px;
+    gap: 12px;
     /* width: 50px; */
   }
 
@@ -78,21 +61,53 @@ const StyledTableItemCard = styled.div`
 
 const ChangeProps = styled.div`
  display: block;
+ width: 80px;
+ color: green;
  @media only screen and (max-width: 376px) {
       display: none;
-
+    }
+    @media only screen and (min-width: 376px) and (max-width: 835px) {
+     width: 100px;
+    }
+    @media screen and (min-width: 835px) {
+      width: 180px;
     }
 `;
 const VolumeProps = styled.div`
 display: block;
+width: 80px;
   /* @media screen and (max-width: 356px) {
       display: none;
     } */
+    @media only screen and (min-width: 376px) and (max-width: 835px) {
+     width: 100px;
+    }
+    @media screen and (min-width: 835px) {
+      width: 180px;
+    }
+`;
+const ChangeProps2 = styled.div`
+ display: block;
+ width: 80px;
+ color: red;
+ @media only screen and (max-width: 376px) {
+      display: none;
+    }
+    @media only screen and (min-width: 376px) and (max-width: 835px) {
+     width: 100px;
+    }
+    @media screen and (min-width: 835px) {
+      width: 180px;
+    }
 `;
 const SoldProps = styled.div`
 display: block;
-   @media screen and (max-width: 376px) {
+width: 80px;
+   @media screen and (max-width: 835px) {
       display: none;
+    }
+    @media screen and (min-width: 835px) {
+      width: 180px;
     }
 `;
 
@@ -111,7 +126,7 @@ const TableItems = ({ image, id, artist, volume, change, sold }) => {
           </div>
         </div>
         <div className="right-table-Items-stats">
-          <ChangeProps>{change}</ChangeProps>
+         { change  > 10 ? (<ChangeProps>{change}</ChangeProps>): (<ChangeProps2>{change}</ChangeProps2>)}
           <VolumeProps>{volume}</VolumeProps>
           <SoldProps>{sold}</SoldProps>
         </div>
