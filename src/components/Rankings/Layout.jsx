@@ -36,11 +36,13 @@ const WrapperItemStyled = styled.div`
     height: auto;
     gap: 20px;
     width: 400px;
+    align-items: center;
    /* @media screen and (max-width: 375px) {
     width: 215px;
    } */
     @media (min-width: 375px) and (max-width: 835px) {
       width: auto;
+
       height: 22px;
     }
   }
@@ -50,23 +52,26 @@ const WrapperItemStyled = styled.div`
   }
 `;
 const Volume = styled.div`
-  width: 160px;
+  width: 80px;
   align-self: stretch;
   color: #858584;
     letter-spacing: 0.00px;
-    line-height: 22.4px;
+    line-height: 13.2px;
     margin-top: -1.00px;
     mix-blend-mode: normal;
     text-align: left;
     white-space: nowrap;
-  @media screen and (max-width: 376px) {
-    align-self: stretch;
-    width: 100%;
-    line-height: 13.2px;
+
+  @media screen and (min-width: 376px) and (max-width: 835px) {
+    line-height: 22.4px;
+    width: 100px;
+  }
+  @media screen and (min-width: 835px){
+    width: 180px;
   }
 `;
 const Sold = styled.div`
-   width: 160px;
+   width: 80px;
   align-self: stretch;
   color: #858584;
     letter-spacing: 0.00px;
@@ -81,13 +86,17 @@ const Sold = styled.div`
   @media screen and (max-width: 835px) {
     display: none;
   }
+  @media screen and (min-width: 375px) and (max-width: 835px) {
+    width: 100px;
+  }
+  @media screen and (min-width: 835px){
+    width: 180px;
+  }
 `;
 const Change = styled.div`
-width: 160px;
-width: 160px;
+width: 80px;
   align-self: stretch;
   color: #858584;
-
     letter-spacing: 0.00px;
     line-height: 22.4px;
     margin-top: -1.00px;
@@ -95,10 +104,15 @@ width: 160px;
     position: relative;
     text-align: left;
     white-space: nowrap;
-
   display: block;
   @media screen and (max-width: 376px) {
     display: none;
+  }
+  @media screen and (min-width: 375px) and (max-width: 835px) {
+    width: 100px;
+  }
+  @media screen and (min-width: 835px){
+    width: 180px;
   }
 `;
 const Artist = styled.div`
@@ -112,9 +126,7 @@ font-family: Space Mono;
 font-style: normal;
 font-weight: 400;
 line-height: 110%;
-@media only screen and (max-width: 376px) {
- 
-}
+
 `;
 const Tag = styled.div`
    display: flex;
@@ -127,9 +139,6 @@ font-family: Space Mono;
 font-style: normal;
 font-weight: 400;
 line-height: 110%;
-@media only screen and (max-width: 376px) {
- 
-}
 `
 const LayoutRanking = () => {
   return (
@@ -162,7 +171,7 @@ const LayoutRanking = () => {
         id={"2"}
         image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
         artist={"Selena Gomez"}
-        change={"13.22"}
+        change={"8"}
         sold={"20 ETH"}
         volume={"20"}
         ></TableHeader>
