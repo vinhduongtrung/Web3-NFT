@@ -12,6 +12,9 @@
   --form-height:691px;
   --form-width: 1035px;
 }
+.container .img {
+  display: none;
+}
 
 /* 
 ----------------------
@@ -407,7 +410,38 @@
     --form-height:691px;
     --form-width: 733px;
   }
-  .form .sign-in, .form .sign-up {
+  .container .img {
+    display: none;
+  }
+  .container .form .sign-in, .container .form .sign-up {
     padding: 0 0;
+  }
+}
+/*
+IPhoneSE 375
+
+*/
+@media (max-width: 375px) {
+  .container .overlay {
+    display: none;
+  }
+  .container .form {
+    display: block;
+    background-image: url(https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/image-placeholder-85@1x.png);
+    background-size: cover;
+  }
+  .container .form .sign-in, .container .form .sign-up {
+    width: calc(var(--form-width) - 319px - var(--padding) * 2);
+  }
+  .container #sign-in-form input, .container #sign-up-form input {
+    width: 300px;
+  }
+  .container .input-icon img {
+    position: absolute;
+    right: 286px;
+    bottom: 14px;
+  }
+  .container .control-button.up {
+    width: 300px;
   }
 }/*# sourceMappingURL=AccountRegister.css.map */
