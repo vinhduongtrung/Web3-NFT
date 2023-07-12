@@ -139,7 +139,7 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to ={'/register'}>
+                        <NavLink to ={'/Connect'}>
                             <Button name="Connect a wallet"/>
                         </NavLink>
                     </li>

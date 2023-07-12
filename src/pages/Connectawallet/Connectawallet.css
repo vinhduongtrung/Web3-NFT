@@ -1,0 +1,11 @@
+.Contain {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  align-self: stretch;
+}
+
+.Img img {
+  width: 920px;
+  height: 642px;
+}/*# sourceMappingURL=Connectawallet.css.map */
