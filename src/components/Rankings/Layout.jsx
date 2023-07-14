@@ -24,10 +24,12 @@ const WrapperItemStyled = styled.div`
     border-radius: 20px;
     display: flex;
     justify-content: space-between;
+    width: auto;
+    height: 46px;
     width: 100%;
     height: 46px;
     /* @media screen and (min-width: 376px) {
-    width: 100%;
+    width: auto;
    } */
   }
 
@@ -37,7 +39,7 @@ const WrapperItemStyled = styled.div`
     gap: 20px;
     width: 400px;
     align-items: center;
-   /* @media screen and (max-width: 375px) {
+    /* @media screen and (max-width: 375px) {
     width: 215px;
    } */
     @media (min-width: 375px) and (max-width: 835px) {
@@ -55,32 +57,32 @@ const Volume = styled.div`
   width: 80px;
   align-self: stretch;
   color: #858584;
-    letter-spacing: 0.00px;
-    line-height: 13.2px;
-    margin-top: -1.00px;
-    mix-blend-mode: normal;
-    text-align: left;
-    white-space: nowrap;
+  letter-spacing: 0px;
+  line-height: 13.2px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  text-align: left;
+  white-space: nowrap;
 
   @media screen and (min-width: 376px) and (max-width: 835px) {
     line-height: 22.4px;
     width: 100px;
   }
-  @media screen and (min-width: 835px){
+  @media screen and (min-width: 835px) {
     width: 180px;
   }
 `;
 const Sold = styled.div`
-   width: 80px;
+  width: 80px;
   align-self: stretch;
   color: #858584;
-    letter-spacing: 0.00px;
-    line-height: 22.4px;
-    margin-top: -1.00px;
-    mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
+  letter-spacing: 0px;
+  line-height: 22.4px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
   /* gap:10px; */
   display: block;
   @media screen and (max-width: 835px) {
@@ -89,21 +91,21 @@ const Sold = styled.div`
   @media screen and (min-width: 375px) and (max-width: 835px) {
     width: 100px;
   }
-  @media screen and (min-width: 835px){
+  @media screen and (min-width: 835px) {
     width: 180px;
   }
 `;
 const Change = styled.div`
-width: 80px;
+  width: 80px;
   align-self: stretch;
   color: #858584;
-    letter-spacing: 0.00px;
-    line-height: 22.4px;
-    margin-top: -1.00px;
-    mix-blend-mode: normal;
-    position: relative;
-    text-align: left;
-    white-space: nowrap;
+  letter-spacing: 0px;
+  line-height: 22.4px;
+  margin-top: -1px;
+  mix-blend-mode: normal;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
   display: block;
   @media screen and (max-width: 376px) {
     display: none;
@@ -111,35 +113,34 @@ width: 80px;
   @media screen and (min-width: 375px) and (max-width: 835px) {
     width: 100px;
   }
-  @media screen and (min-width: 835px){
+  @media screen and (min-width: 835px) {
     width: 180px;
   }
 `;
 const Artist = styled.div`
- display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-color:  #858584;
-/* Caption - Space Mono */
-font-size: 12px;
-font-family: Space Mono;
-font-style: normal;
-font-weight: 400;
-line-height: 110%;
-
+  color: #858584;
+  /* Caption - Space Mono */
+  font-size: 12px;
+  font-family: Space Mono;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
 `;
 const Tag = styled.div`
-   display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-color:  #858584;
-/* Caption - Space Mono */
-font-size: 12px;
-font-family: Space Mono;
-font-style: normal;
-font-weight: 400;
-line-height: 110%;
-`
+  color: #858584;
+  /* Caption - Space Mono */
+  font-size: 12px;
+  font-family: Space Mono;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%;
+`;
 const LayoutRanking = () => {
   return (
     <LayoutStyled>
@@ -160,64 +161,80 @@ const LayoutRanking = () => {
         </div>
 
         <TableHeader
-           id={"1"}
-           image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-           artist={"Selena Gomez"}
-           change={"13.22"}
-           sold={"20 ETH"}
-           volume={"20"}
+          id={"1"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-        id={"2"}
-        image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-        artist={"Selena Gomez"}
-        change={"8"}
-        sold={"20 ETH"}
-        volume={"20"}
+          id={"2"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"8"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-            id={"3"}
-            image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-            artist={"Selena Gomez"}
-            change={"13.22"}
-            sold={"20 ETH"}
-            volume={"20"}
+          id={"3"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-        id={"4"}
-        image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-        artist={"Selena Gomez"}
-        change={"13.22"}
-        sold={"20 ETH"}
-        volume={"20"}
+          id={"4"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-             id={"5"}
-             image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-             artist={"Selena Gomez"}
-             change={"13.22"}
-             sold={"20 ETH"}
-             volume={"20"}
+          id={"5"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-            id={"6"}
-            image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-            artist={"Selena Gomez"}
-            change={"13.22"}
-            sold={"20 ETH"}
-            volume={"20"}
+          id={"6"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artist={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
-             id={"7"}
-             image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
-             artits={"Selena Gomez"}
-             change={"13.22"}
-             sold={"20 ETH"}
-             volume={"20"}
+          id={"7"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
+          artits={"Selena Gomez"}
+          change={"13.22"}
+          sold={"20 ETH"}
+          volume={"20"}
         ></TableHeader>
         <TableHeader
           id={"8"}
-          image={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"}
+          image={
+            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
+          }
           artits={"Selena Gomez"}
           change={"13.22"}
           sold={"20 ETH"}

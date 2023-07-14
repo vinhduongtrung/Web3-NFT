@@ -9,11 +9,17 @@ import Rankings from "./pages/Rankings"
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
+import styled from "styled-components"
+const Wrapper = styled.div`
+   .wrapper{ 
+    
+   }
+`
 function App() {
   return (
     <>
       <Header/>
-      <div className="wrapper">
+      <Wrapper className="wrapper">
         <Routes>
           <Route path="/" element = {<Home/>}/>
           <Route path="/register" element = {<AccountRegister/>}/>
@@ -23,7 +29,7 @@ function App() {
           <Route path="/rankings" element = {<Rankings/>}/>
           <Route path="/artist-page" element={<ArtistPage/>} />
         </Routes>
-      </div>
+      </Wrapper>
       <Footer/>
     </>
   )
