@@ -23,7 +23,7 @@ const Wrapper = styled.div`
   
   @media (min-width: 834px) {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-template-columns: repeat(2, minmax(330px, 1fr));
   .child {
     height: 100px;
   }
