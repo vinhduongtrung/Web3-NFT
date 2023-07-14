@@ -10,22 +10,23 @@ import Rankings from "./pages/Rankings"
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
+import Layout from "./pages/Layout"
 function App() {
   return (
     <>
       <Header/>
-      <div className="wrapper">
-        <Routes>
-          <Route path="/" element = {<Home/>}/>
-          <Route path="/Connect" element = {<Connectawwallet/>}/>
-          <Route path="/register" element = {<AccountRegister/>}/>
-          <Route path="/artist/:id" element = {<Artist/>}/>
-          <Route path="/nft/:id" element = {<NFT/>}/>
-          <Route path="/marketplace" element = {<MarketPlace/>}/>
-          <Route path="/rankings" element = {<Rankings/>}/>
-          <Route path="/artist-page" element={<ArtistPage/>} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path ="/" element ={<Layout/>}>
+          <Route index element = {<Home/>}/>
+          <Route path="artist/:id" element = {<Artist/>}/>
+          <Route path="nft/:id" element = {<NFT/>}/>
+          <Route path="marketplace" element = {<MarketPlace/>}/>
+          <Route path="rankings" element = {<Rankings/>}/>
+          <Route path="artist-page" element={<ArtistPage/>} />
+        </Route>
+        <Route path="/connect" element = {<Connectawwallet/>}/>
+        <Route path="/register" element = {<AccountRegister/>}/>
+      </Routes>
       <Footer/>
     </>
   )
