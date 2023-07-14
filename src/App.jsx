@@ -8,6 +8,7 @@ import MarketPlace from "./pages/MarketPlace"
 import Rankings from "./pages/Rankings"
 import "./index.css";
 import { Route, Routes } from "react-router-dom";
+import ArtistPage from "./components/ArtistPage/ArtistPage"
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/nft/:id" element = {<NFT/>}/>
           <Route path="/marketplace" element = {<MarketPlace/>}/>
           <Route path="/rankings" element = {<Rankings/>}/>
+          <Route path="/artist-page" element={<ArtistPage/>} />
         </Routes>
       </div>
       <Footer/>

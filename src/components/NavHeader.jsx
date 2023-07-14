@@ -144,6 +144,11 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to ={`/artist-page`}>
+                            
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to ={'/register'}>
                             <Button logo={<User/>} name="Sign Up" classname="signUpBtn"/>
                         </NavLink>
