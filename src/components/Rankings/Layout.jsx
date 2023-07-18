@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Header from "./header_ranking";
-import TableHeader from "./tableItems";
+import StyledTableItemCard from "./tableItems";
 import TaskBar from "./Tab_Bar";
 
 const LayoutStyled = styled.div`
@@ -160,7 +160,7 @@ const LayoutRanking = () => {
           </div>
         </div>
 
-        <TableHeader
+        <StyledTableItemCard
           id={"1"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -169,8 +169,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"2"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -179,8 +179,8 @@ const LayoutRanking = () => {
           change={"8"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"3"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -189,8 +189,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"4"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -199,8 +199,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"5"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -209,8 +209,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"6"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -219,8 +219,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"7"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -229,8 +229,8 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
-        <TableHeader
+        ></StyledTableItemCard>
+        <StyledTableItemCard
           id={"8"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
@@ -239,7 +239,7 @@ const LayoutRanking = () => {
           change={"13.22"}
           sold={"20 ETH"}
           volume={"20"}
-        ></TableHeader>
+        ></StyledTableItemCard>
       </WrapperItemStyled>
     </LayoutStyled>
   );
