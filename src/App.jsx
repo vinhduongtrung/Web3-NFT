@@ -3,6 +3,7 @@ import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import AccountRegister from "./pages/AccountRegister/AccountRegister"
 import Connectawwallet from "./pages/Connectawallet/Connectawallet"
+import NFTDetails from "./pages/NFTDetailsPage/NFTDetails"
 import Artist from "./pages/Artist"
 import NFT from "./pages/NFT"
 import MarketPlace from "./pages/MarketPlace"
@@ -26,6 +27,7 @@ function App() {
         </Route>
         <Route path="/connect" element = {<Connectawwallet/>}/>
         <Route path="/register" element = {<AccountRegister/>}/>
+        <Route path="/NFTDetails" element = {<NFTDetails/>}/>
       </Routes>
       <Footer/>
     </>
