@@ -5,8 +5,8 @@ import { ReactComponent as VideoGame } from "../../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+
 const ArtistPageStyled = styled.div`
-  position: relative;
   height: auto;
   flex-direction: column;
   display: flex;
@@ -18,16 +18,62 @@ const ArtistPageStyled = styled.div`
     gap: 10px;
     flex-direction: column;
   }
+  .line {
+    height: 1px;
+    min-width: 375px;
+    margin: unset;
+    background-color:#3B3B3B;
+    box-sizing: border-box;
+  }
+  .tab-bar {
+    width: 100%;
+    height: 70px;
+    /* margin: 0 -16.63%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+  }
+  .tabs {
+    display: flex;
+    gap: 10px;
+  }
+  .sub-tabs1 {
+    width: auto;
+    height: auto;
+    gap: 16px;
+    align-items: center;
+  }
+  .sub-tabs2 {
+    width: 100%;
+    height: auto;
+    gap: 16px;
+  }
+  .sub-tabs3 {
+    width: auto;
+    height: auto;
+    gap: 16px;
+  }
 `;
 const ImageBackground = styled.div`
-  position: relative;
-  width: 375px;
+  width: 100%;
   height: auto;
-  margin: 0 -8.63%;
+  display: flex;
+  flex-direction: column;
   .imgbackground {
-    @media screen and (max-width: 376px) {
       width: 375px;
       height: 250px;
+      margin-left: -10.63%;
+      object-fit: cover;
+    @media screen and (min-width: 376px) {
+      width: 834px;
+      height: 280px;
+      margin-left: -18.63%;
+    }
+    @media screen and (min-width: 835px) {
+      min-width: 1440px;
+      height: 320px;
+      align-self: stretch;
     }
   }
 `;
@@ -37,15 +83,12 @@ const ImageArtist = styled.img`
   display: flex;
   height: auto;
   justify-content: center;
-  margin-top: -70px;
   position: relative;
-  width: 375px;
-  @media screen and (max-width: 376px) {
-    width: 120px;
-    height: 120px;
-    max-width: 120px;
+  width: 120px;
     margin: 0 auto;
     margin-top: -70px;
+  @media only screen and (min-width: 376px) {
+ margin-left: 0px;
   }
 `;
 const ArtistInfo = styled.div`
@@ -75,14 +118,16 @@ const ArtistInfo = styled.div`
     }
 `;
 const WrapperArtistInfo = styled.div`
-    align-items: center;
+    align-items: flex-start;
     align-self: stretch;
     display: flex;
     flex-direction: column;
     gap: 30px;
     height: auto;
     padding: 30px 0px;
-    margin: 0 -8.63%;
+    @media screen and (min-width: 376px) {
+      align-items: left;
+    }
   .artist-name {
     //styleName: H4 - Work Sans;
     font-family: Work Sans;
@@ -164,8 +209,16 @@ const ArtistPage = () => {
         </div>
       </ArtistInfo>
       </WrapperArtistInfo>
-      <div className="tab-bar"></div>
+      <div className="tab-bar">
+        <div className="line"></div>
+        <div className="tabs">
+          <div className="sub-tabs1">Created</div>
+          <div className="sub-tabs2">Owned</div>
+          <div className="sub-tabs3">Collection</div>
+        </div>
+      </div>
     </ArtistPageStyled>
   );
 };
 export default ArtistPage;
+
