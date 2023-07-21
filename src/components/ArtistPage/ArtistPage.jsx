@@ -83,7 +83,6 @@ const ImageArtist = styled.img`
   display: flex;
   height: auto;
   justify-content: center;
-  position: relative;
   width: 120px;
     margin: 0 auto;
     margin-top: -70px;
