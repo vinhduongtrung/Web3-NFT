@@ -2,6 +2,8 @@ import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
+import useNftItem from "../store/nftStore";
+import { useEffect } from 'react';
 
 const STrending = styled.div`
   display: flex;
@@ -94,6 +96,12 @@ const data = [
 ]
 
 const Trending = () => {
+  const {res, fetchData} = useNftItem();
+  const username = "trungvinh";
+  useEffect(() => {
+    fetchData(username);
+  }, [fetchData]);
+
   return (
     <div className="trending">
       <STrending>
