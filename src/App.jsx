@@ -12,8 +12,6 @@ import ArtistPage from "./components/ArtistPage/ArtistPage"
 import styled from "styled-components"
 const Wrapper = styled.div`
 
-   .wrapper{ 
-   }
 `
 function App() {
   return (
