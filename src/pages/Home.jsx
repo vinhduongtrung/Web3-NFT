@@ -27,6 +27,7 @@ const SHome = styled.div`
   }
 `
 const Home = () => {
+  console.log("ok");
   return (
     <SHome>
       <Hero />
