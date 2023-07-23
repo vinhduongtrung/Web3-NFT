@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
-import useNftItem from "../store/nftStore";
+import useNftItem from "../store/nftItem";
 import { useEffect } from 'react';
 
 const STrending = styled.div`
