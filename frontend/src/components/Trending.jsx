@@ -96,12 +96,6 @@ const data = [
 ]
 
 const Trending = () => {
-  const {res, fetchData} = useNftItem();
-  const username = "trungvinh";
-  useEffect(() => {
-    fetchData(username);
-  }, [fetchData]);
-
   return (
     <div className="trending">
       <STrending>
