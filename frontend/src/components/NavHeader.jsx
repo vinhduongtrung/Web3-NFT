@@ -117,6 +117,7 @@ const Header = () => {
     const toggleActive = () => {
         setActive(!isActive)
     }
+    
     return (
         <SHeader>
             <HeaderTop>
@@ -139,7 +140,7 @@ const Header = () => {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to ={'/Connect'}>
+                        <NavLink to ={'/connect'}>
                             <Button name="Connect a wallet"/>
                         </NavLink>
                     </li>
