@@ -5,7 +5,6 @@ import { ReactComponent as VideoGame } from "../../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
-
 const ArtistPageStyled = styled.div`
   height: auto;
   flex-direction: column;
@@ -24,6 +23,9 @@ const ArtistPageStyled = styled.div`
     margin: unset;
     background-color:#3B3B3B;
     box-sizing: border-box;
+    @media screen and (min-width: 376px) {
+      width: 1440px;
+    }
   }
   .tab-bar {
     width: 100%;
@@ -37,22 +39,19 @@ const ArtistPageStyled = styled.div`
   .tabs {
     display: flex;
     gap: 10px;
+    width: 100%;
+    justify-content: space-around;
   }
   .sub-tabs1 {
     width: auto;
     height: auto;
-    gap: 16px;
-    align-items: center;
   }
   .sub-tabs2 {
-    width: 100%;
-    height: auto;
-    gap: 16px;
-  }
-  .sub-tabs3 {
     width: auto;
     height: auto;
-    gap: 16px;
+  }
+  .sub-tabs3 {
+   
   }
 `;
 const ImageBackground = styled.div`
@@ -159,7 +158,11 @@ const WrapperStats = styled.div`
   width: 315px;
   gap: 20px;
 `;
-
+const SubTabStyled = styled.div`
+   width: auto;
+    height: auto;
+    gap: 16px;
+`
 const ArtistPage = () => {
   return (
     <ArtistPageStyled>
@@ -211,9 +214,20 @@ const ArtistPage = () => {
       <div className="tab-bar">
         <div className="line"></div>
         <div className="tabs">
-          <div className="sub-tabs1">Created</div>
-          <div className="sub-tabs2">Owned</div>
-          <div className="sub-tabs3">Collection</div>
+          <SubTabStyled>
+          <p>Created</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          <SubTabStyled>
+          <p>Created</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          <SubTabStyled>
+          <p>Created</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          
+         
         </div>
       </div>
     </ArtistPageStyled>
