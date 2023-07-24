@@ -13,9 +13,9 @@ const SButton = styled.div`
         height: 20px;
     }
 `
-const Button = ({logo, name, classname}) => {
+const Button = ({logo, name, classname, onClick}) => {
   return (
-    <SButton className={classname}>
+    <SButton className={classname} onClick={onClick}>
         {logo}
         <span>{name}</span>
     </SButton>
