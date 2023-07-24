@@ -44,11 +44,11 @@ border: 2px solid black;
 }
 ;
 `
-const Button = () => {
+const Button = ({hash}) => {
     return (
         <ButtonArtist>
            <ButtonInfo>
-            <div></div>
+                <div>{hash}</div>
            </ButtonInfo>
             <ButtonFollow>
             <img className="plus-button" src={Follow} alt="" />

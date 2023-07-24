@@ -5,6 +5,7 @@ import { ReactComponent as VideoGame } from "../../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
+import useWallet from "../../store/wallet";
 
 const ArtistPageStyled = styled.div`
   height: auto;
@@ -161,6 +162,7 @@ const WrapperStats = styled.div`
 `;
 
 const ArtistPage = () => {
+  const {hash} = useWallet();
   return (
     <ArtistPageStyled>
       <ImageBackground>
@@ -179,7 +181,7 @@ const ArtistPage = () => {
         <div>
         <h4 className="artist-name">AnimeKid</h4>
         </div>
-        <Button></Button>
+        <Button hash={hash}/>
         <WrapperStats>
           <StatsStyled>
             <StatsArtist volume={"250K+"}></StatsArtist>

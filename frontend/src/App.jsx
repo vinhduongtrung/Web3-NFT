@@ -12,10 +12,13 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
 import Layout from "./pages/Layout"
+import useUser from "./store/user"
 function App() {
+  const {user} = useUser();
+    
   return (
     <>
-      <Header/>
+      <Header user={user}/>
 
       <Routes>
         <Route path ="/" element ={<Layout/>}>
