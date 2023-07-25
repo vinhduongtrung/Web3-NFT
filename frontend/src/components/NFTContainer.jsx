@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import NFTCard from './Card/NFTCard';
 import useNftItem from "../store/nftItem";
 import useUser from '../store/user';
+import getMoreItem from '../store/getMore';
 
 const Wrapper = styled.div`
   display: grid;
@@ -24,16 +25,15 @@ const Wrapper = styled.div`
 `
 
 const NFTContainer = () => {
-  const {data, fetchData} = useNftItem();
-  const {user} = useUser();
+  const {data, fetchData} = getMoreItem();
   useEffect(() => {
-    fetchData(user.username, 1);
+    fetchData();
   }, [fetchData]);
   return (
     <Wrapper>
       {
         data.map((item) =>
-          <NFTCard key={item.id} item={item} />
+          <NFTCard key={item.nftName} item={item} />
         )
       }
     </Wrapper>
