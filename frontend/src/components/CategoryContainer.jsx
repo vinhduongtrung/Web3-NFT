@@ -36,7 +36,6 @@ const Wrapper = styled.div`
 
 const CategoryContainer = () => {
     const {data, fetchData} = useCategory();
-
     useEffect(() => {
       fetchData();
     }, [fetchData])
@@ -44,7 +43,7 @@ const CategoryContainer = () => {
         <Wrapper>
             {
                 data.map((item) =>
-                    <CategoryCard key={item.name} item={item} />
+                    <CategoryCard key={item.id} item={item} />
                 )
             }
         </Wrapper>

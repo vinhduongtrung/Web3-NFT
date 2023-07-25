@@ -21,15 +21,15 @@ const Container = styled.div`
   }
 `
 const NFTCard = ({item}) => {
-    const {name, avatar, artist, price, bid, cover} = item;
+    const {username, profilePicture, nftName, price, bid, image} = item;
     return (
         <Container>
-            <div className="cover" style={{ backgroundImage: `url(${cover})`}}></div>
+            <div className="cover" style={{ backgroundImage: `url(${image})`}}></div>
             <div className="info">
-              <CollectionInfo collection={name} avatar={avatar} name={artist}/>
+              <CollectionInfo collection={nftName} avatar={profilePicture} name={username}/>
                 <div className="price-info">
-                    <div className="price">{price} ETH</div>
-                    <div className="bid">{bid} wETH</div>
+                    <div className="price">Price {price} ETH</div>
+                    <div className="bid">Highest Bid {bid} wETH</div>
                 </div>
             </div>
         </Container>

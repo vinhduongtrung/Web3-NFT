@@ -1,6 +1,6 @@
 
 const CategoryCard = ({item}) => {
-  const {name} = item;
+  const {id,name,icon,cover} = item;
   return (
     <div className='box'>
       {/* <Avatar radius="60px" cover={cover}/> */}
