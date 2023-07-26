@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 const SUserInfo = styled.div`
     display: flex;
     gap: 12px;
+    cursor: pointer;
 `
 export const AvatarAndName = ({avatar, name}) => {
     const navigate = useNavigate();
