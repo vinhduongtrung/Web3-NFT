@@ -23,11 +23,10 @@ function App() {
       <Routes>
         <Route path ="/" element ={<Layout/>}>
           <Route index element = {<Home/>}/>
-          <Route path="artist/:id" element = {<Artist/>}/>
           <Route path="nft/:id" element = {<NFT/>}/>
           <Route path="marketplace" element = {<MarketPlace/>}/>
           <Route path="rankings" element = {<Rankings/>}/>
-          <Route path="artist-page" element={<ArtistPage/>} />
+          <Route path="artist/:username" element={<ArtistPage/>} />
         </Route>
         <Route path="/connect" element = {<Connectawwallet/>}/>
         <Route path="/register" element = {<AccountRegister/>}/>

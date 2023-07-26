@@ -1,8 +1,9 @@
 import { create } from 'zustand';
 
 const useUser = create((set) => ({
-    user: "",
+    data: [],
     registerRequest: async (register) => {
+        console.log(register);
         try {
             const res = await fetch("http://localhost:8080/api/v1/auth/register", {
                 method: 'POST',
@@ -10,16 +11,16 @@ const useUser = create((set) => ({
                     'Accept': 'application/json',
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ register })
+                body: JSON.stringify(register)
             });
 
             if (!res.ok) {
                 throw new Error("not ok")
             }
-            const r = await res.json();
-            set({ user : r.access_token})
+            const data = await res.json();
+            set({ data })
         } catch (error) {
-            set({ user: "" })
+            set({ data: [] })
         }
     },
     loginRequest: async (login) => {
