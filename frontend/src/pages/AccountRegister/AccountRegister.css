@@ -408,13 +408,15 @@
     width: 100%;
     box-shadow: none;
     --form-height:691px;
-    --form-width: 733px;
+    --form-width: 824px;
   }
   .container .img {
     display: none;
   }
   .container .form .sign-in, .container .form .sign-up {
+    --padding: 105px;
     padding: 0 0;
+    width: calc(var(--form-width) - 193px - var(--padding) * 2);
   }
 }
 /*
@@ -422,6 +424,9 @@ IPhoneSE 375
 
 */
 @media (max-width: 800px) {
+  .container {
+    --form-width: 733px;
+  }
   .container .overlay {
     display: none;
   }
@@ -431,7 +436,8 @@ IPhoneSE 375
     background-size: cover;
   }
   .container .form .sign-in, .container .form .sign-up {
-    width: calc(var(--form-width) - 319px - var(--padding) * 2);
+    --padding: 50px;
+    width: calc(var(--form-width) - 257px - var(--padding) * 2);
   }
   .container #sign-in-form input, .container #sign-up-form input {
     width: 300px;

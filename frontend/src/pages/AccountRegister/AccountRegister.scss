@@ -426,12 +426,14 @@
       width: 100%;
       box-shadow: none;
       --form-height:691px;
-      --form-width: 733px;
+      --form-width: 824px;
       .img{
         display: none;
       }
       .form .sign-in, .form .sign-up{
+        --padding: 105px;
         padding: 0 0;
+        width: calc(var(--form-width) - 193px - var(--padding) * 2);
       }
   
   }
@@ -446,8 +448,9 @@ IPhoneSE 375
 */
 @media (max-width: 800px ){
   .container {
-  // background-image: url(https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/image-placeholder-85@1x.png);
-  .overlay{
+
+    --form-width: 733px;
+    .overlay{
     display: none;
   }
   .form{
@@ -457,7 +460,8 @@ IPhoneSE 375
     
   }
   .form .sign-in, .form .sign-up{
-    width: calc(var(--form-width) - 319px - var(--padding) * 2);
+    --padding: 50px;
+    width: calc(var(--form-width) - 257px - var(--padding) * 2);
   }
   #sign-in-form input, #sign-up-form input{
     width: 300px;
