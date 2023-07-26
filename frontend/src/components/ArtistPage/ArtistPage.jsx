@@ -6,6 +6,10 @@ import { ReactComponent as Youtube } from "../../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import useWallet from "../../store/wallet";
+import useNftItem from "../../store/nftItem";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import NFTCard from "../Card/NFTCard";
 
 const ArtistPageStyled = styled.div`
   height: auto;
@@ -155,6 +159,24 @@ const StatsStyled = styled.div`
     white-space: nowrap;
   }
 `;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+  @media (min-width: 834px) {
+  grid-template-columns: repeat(2, minmax(330px, 1fr));
+  .child {
+    height: 100px;
+  }
+  .best-product {
+    width: 330px;
+    height: 330px;
+  }
+}
+  @media (min-width: 1024px) {
+    grid-template-columns:repeat(3, minmax(330px, 1fr));
+  }
+`
 const WrapperStats = styled.div`
   display: flex;
   width: 315px;
@@ -162,7 +184,14 @@ const WrapperStats = styled.div`
 `;
 
 const ArtistPage = () => {
-  const {hash} = useWallet();
+  const { hash } = useWallet();
+  const { data, fetchData } = useNftItem();
+
+  const {username} = useParams();
+  useEffect(() => {
+    fetchData(username, 1);
+  }, [])
+
   return (
     <ArtistPageStyled>
       <ImageBackground>
@@ -172,43 +201,45 @@ const ArtistPage = () => {
           alt="Background"
         />
         <ImageArtist
-          src="https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-32@2x.png"
+          src={data.profilePicture}
           alt="Ảnh Artist"
         ></ImageArtist>
       </ImageBackground>
       <WrapperArtistInfo>
-      <ArtistInfo>
-        <div>
-        <h4 className="artist-name">AnimeKid</h4>
-        </div>
-        <Button hash={hash}/>
-        <WrapperStats>
-          <StatsStyled>
-            <StatsArtist volume={"250K+"}></StatsArtist>
-            <p className="text-page-artist">Volume</p>
-          </StatsStyled>
-          <StatsStyled>
-            <StatsArtist nft={"50K+"}></StatsArtist>
-            <p className="text-page-artist">NFT Sold</p>
-          </StatsStyled>
-          <StatsStyled>
-            <StatsArtist follower={"3000K+"}></StatsArtist>
-            <p className="text-page-artist">Follower</p>
-          </StatsStyled>
-        </WrapperStats>
+        <ArtistInfo>
+          <div>
+            <h4 className="artist-name">{data.username}</h4>
+          </div>
+          <Button hash={hash} />
+          <WrapperStats>
+            <StatsStyled>
+              <StatsArtist volume={"250K+"}></StatsArtist>
+              <p className="text-page-artist">Volume</p>
+            </StatsStyled>
+            <StatsStyled>
+              <StatsArtist nft={"50K+"}></StatsArtist>
+              <p className="text-page-artist">NFT Sold</p>
+            </StatsStyled>
+            <StatsStyled>
+              <StatsArtist follower={"3000K+"}></StatsArtist>
+              <p className="text-page-artist">Follower</p>
+            </StatsStyled>
+          </WrapperStats>
 
-        <div className="bio">
-          <p>Bio</p>
-          <p>The internet&apos;s friendliest designer kid.</p>
-        </div>
-        <div className="bottom-links">
-          <p>Links</p>
-          <div className="icons">  <VideoGame/>
-                <Youtube/>
-                <Twitter/>
-                <Instagram/></div>
-        </div>
-      </ArtistInfo>
+          <div className="bio">
+            <p>Bio</p>
+            <p>The internet&apos;s friendliest designer kid.</p>
+          </div>
+          <div className="bottom-links">
+            <p>Links</p>
+            <div className="icons">
+              <VideoGame />
+              <Youtube />
+              <Twitter />
+              <Instagram />
+            </div>
+          </div>
+        </ArtistInfo>
       </WrapperArtistInfo>
       <div className="tab-bar">
         <div className="line"></div>
@@ -218,6 +249,13 @@ const ArtistPage = () => {
           <div className="sub-tabs3">Collection</div>
         </div>
       </div>
+      <Wrapper>
+          {data.nft &&
+            data.nft.map((item) =>
+              <NFTCard key={item.name} item={item} />
+            )
+          }
+        </Wrapper>
     </ArtistPageStyled>
   );
 };

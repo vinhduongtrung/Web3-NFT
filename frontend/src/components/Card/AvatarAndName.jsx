@@ -9,7 +9,7 @@ const SUserInfo = styled.div`
 export const AvatarAndName = ({avatar, name}) => {
     const navigate = useNavigate();
     return (
-        <SUserInfo onClick = {()=>navigate("/artist-page")}>
+        <SUserInfo onClick = {()=>navigate(`/artist/${name}`)}>
             <Avatar radius="24px" cover={avatar}/>
             <span>{name}</span>
         </SUserInfo>

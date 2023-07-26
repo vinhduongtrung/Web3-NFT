@@ -1,8 +1,6 @@
 import { styled } from 'styled-components'
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import NFTCard from './Card/NFTCard';
-import useNftItem from "../store/nftItem";
-import useUser from '../store/user';
 import getMoreItem from '../store/getMore';
 
 const Wrapper = styled.div`
@@ -28,7 +26,7 @@ const NFTContainer = () => {
   const {data, fetchData} = getMoreItem();
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
   return (
     <Wrapper>
       {

@@ -38,7 +38,7 @@ const CategoryContainer = () => {
     const {data, fetchData} = useCategory();
     useEffect(() => {
       fetchData();
-    }, [fetchData])
+    }, [])
     return (
         <Wrapper>
             {
