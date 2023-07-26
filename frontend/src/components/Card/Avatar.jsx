@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import { styled } from 'styled-components'
 
 const SAvatar = styled.div`
@@ -8,11 +9,13 @@ const SAvatar = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    cursor: pointer;
 `
 
-const Avatar = ({radius, cover}) => {
+const Avatar = ({radius, cover, username}) => {
+  const navigate = useNavigate();
   return (
-    <SAvatar radius = {radius} cover = {cover}/>
+    <SAvatar radius = {radius} cover = {cover} onClick = {()=>navigate(`/artist/${username}`)}/>
   )
 }
 
