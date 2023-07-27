@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PlaceHolder from "../../assets/ImageplaceHolder.svg"
+import CountTimer from "./Countimer";
 const PageStyled = styled.div`
     width: 100%;
     height: auto;
@@ -7,9 +8,26 @@ const PageStyled = styled.div`
     flex-direction: column;
     gap: 10px;
 .placeholder-img{
-    width: 1440px;
+    width: 375px;
+      height: 250px;
+      margin-left: -10.63%;
+      object-fit: cover;
+    @media screen and (min-width: 376px) {
+      width: 834px;
+      height: 280px;
+      /* margin-left: -18.63%; */
+    }
+    @media screen and (min-width: 835px) {
+      min-width: 1423px;
+      height: 540px;
+      align-self: stretch;
+      object-fit: cover;
+    }
+}
+.layout-body {
+    width: 100%;
     height: auto;
-    margin: 0 -13.54%;
+    position: relative;
 }
 `
 const NFTArtistInfoLayout =styled.div`
@@ -18,17 +36,27 @@ const NFTArtistInfoLayout =styled.div`
     gap: 20px;
     display: flex;
     flex-direction: column;
+    @media screen and (max-width: 376px) {
+        align-items: flex-start;
+        width: 100%;
+    }
 `
 const RightButtonLayout = styled.div`
     width: 40%;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
 `
 const NFTPage = () => {
     return (
         <PageStyled>
-            <div>
+            <div className="placeholder">
                 <img className="placeholder-img" src={PlaceHolder} alt="Placeholder" />
             </div>
+            <div className="layout-body">
             <NFTArtistInfoLayout>
                 <div>
                     <h2>
@@ -76,7 +104,10 @@ These Orbitians are a peaceful race, but they have been at war with a group of i
                     </div>
                 </div>
             </NFTArtistInfoLayout>
-            <RightButtonLayout></RightButtonLayout>
+            <RightButtonLayout>
+            <CountTimer></CountTimer>
+            </RightButtonLayout>
+            </div>
         </PageStyled>
     )
 };
