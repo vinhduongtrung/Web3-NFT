@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 const StyledTableItemCard = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const StyledTableItemCard = styled.div`
     display: flex;
     align-items: center;
     gap: 12px;
-    /* width: 50px; */
+    cursor: pointer;
   }
 
 `;
@@ -113,6 +114,7 @@ width: 80px;
 
 // eslint-disable-next-line react/prop-types
 const TableItems = ({ image, id, artist, volume, change, sold }) => {
+  const navigate = useNavigate();
   return (
     <StyledTableItemCard>
       <div className="table-items">
@@ -120,9 +122,10 @@ const TableItems = ({ image, id, artist, volume, change, sold }) => {
           <div className="ranking-artist">
             <p>{id} </p>
           </div>
-          <div className="artist-card">
-            <img className="img-artist" data-id="I1996:14823;1974:22003;1974:11637;1288:13009;1381:1139;1390:1114" src={image} alt="Avatar Placeholder"/>
-            <p >{artist}</p>
+          <div className="artist-card" onClick = {()=>navigate(`/artist/${artist}`)}>
+            <img className="img-artist" data-id="I1996:14823;1974:22003;1974:11637;1288:13009;1381:1139;1390:1114"
+             src={image} alt="Avatar Placeholder"/>
+            <p>{artist}</p>
           </div>
         </div>
         <div className="right-table-Items-stats">

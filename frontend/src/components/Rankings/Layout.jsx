@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Header from "./header_ranking";
 import StyledTableItemCard from "./tableItems";
 import TaskBar from "./Tab_Bar";
+import { useEffect, useState } from "react";
+import useTopCreator from "../../store/topCreator";
 
 const LayoutStyled = styled.div`
   display: flex;
@@ -142,6 +144,30 @@ const Tag = styled.div`
   line-height: 110%;
 `;
 const LayoutRanking = () => {
+  const { data, fetchData } = useTopCreator();
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(5);
+  useEffect(() => {
+    fetchData(page, limit);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [page])
+  
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
+    ) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <LayoutStyled>
       <Header />
@@ -159,87 +185,20 @@ const LayoutRanking = () => {
             <Volume>Volume</Volume>
           </div>
         </div>
-
-        <StyledTableItemCard
-          id={"1"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"2"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"8"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"3"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"4"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"5"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"6"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"7"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artits={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"8"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artits={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
-        ></StyledTableItemCard>
+        {
+          data.map((item) =>
+            <StyledTableItemCard
+              key={item.id}
+              id={item.id}
+              image={item.profile}
+              artist={item.username}
+              change={"13.22"}
+              sold={item.totalSales}
+              volume={"20"}
+            >
+            </StyledTableItemCard>
+          )
+        }
       </WrapperItemStyled>
     </LayoutStyled>
   );

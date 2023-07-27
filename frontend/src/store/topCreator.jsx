@@ -1,18 +1,9 @@
 import {create} from 'zustand';
 
-const useCreator = create((set) => ({
+const useTopCreator = create((set) => ({
     data : [],
-    page : 1,
-    fetchData: async () => {
+    fetchData: async (page, limit) => {
         try{
-            let limit;
-            if (window.innerWidth >= 1200) {
-            limit = 12;
-            } else if (window.innerWidth >= 768) {
-            limit = 6;
-            } else {
-            limit = 5;
-            }
             const res = await fetch(`http://localhost:8080/api/v1/user/getTopUser/${page}/${limit}`, {
                 method: 'GET',
                 headers: {
@@ -24,12 +15,14 @@ const useCreator = create((set) => ({
             if(!res.ok) {
                 throw new Error("res not ok")
             }
-            const data = await res.json();
-            console.log(data);
-            set({data})
+            const newData = await res.json();
+           console.log(newData);
+            set((prev) => ({
+                data: [...prev.data, ...newData]
+            }));
         }catch(error) {
             console.log(error);
         }
     }
 }))
-export default useCreator;
+export default useTopCreator;
