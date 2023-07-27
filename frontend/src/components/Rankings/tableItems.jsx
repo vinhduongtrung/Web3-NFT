@@ -129,7 +129,7 @@ const TableItems = ({ image, id, artist, volume, change, sold }) => {
           </div>
         </div>
         <div className="right-table-Items-stats">
-         { change  > 10 ? (<ChangeProps>{change}</ChangeProps>): (<ChangeProps2>{change}</ChangeProps2>)}
+         { change > 1 ? (<ChangeProps>+{change}%</ChangeProps>): (<ChangeProps2>-{change } %</ChangeProps2>)}
           <VolumeProps>{volume}</VolumeProps>
           <SoldProps>{sold}</SoldProps>
         </div>

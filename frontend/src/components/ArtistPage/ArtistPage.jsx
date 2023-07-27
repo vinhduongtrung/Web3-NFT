@@ -8,7 +8,7 @@ import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import useWallet from "../../store/wallet";
 import useNftItem from "../../store/nftItem";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import NFTCard from "../Card/NFTCard";
 
 const ArtistPageStyled = styled.div`
@@ -29,6 +29,9 @@ const ArtistPageStyled = styled.div`
     margin: unset;
     background-color:#3B3B3B;
     box-sizing: border-box;
+    @media screen and (min-width: 376px) {
+      width: 1440px;
+    }
   }
   .tab-bar {
     width: 100%;
@@ -42,23 +45,15 @@ const ArtistPageStyled = styled.div`
   .tabs {
     display: flex;
     gap: 10px;
+    width: 100%;
+    justify-content: space-around;
   }
   .sub-tabs1 {
+    display: flex;
     width: auto;
     height: auto;
-    gap: 16px;
-    align-items: center;
   }
-  .sub-tabs2 {
-    width: 100%;
-    height: auto;
-    gap: 16px;
-  }
-  .sub-tabs3 {
-    width: auto;
-    height: auto;
-    gap: 16px;
-  }
+ 
 `;
 const ImageBackground = styled.div`
   width: 100%;
@@ -182,7 +177,12 @@ const WrapperStats = styled.div`
   width: 315px;
   gap: 20px;
 `;
-
+const SubTabStyled = styled.div`
+   width: auto;
+    height: auto;
+    gap: 16px;
+    display: flex;
+`
 const ArtistPage = () => {
   const { hash } = useWallet();
   const { data, fetchData } = useNftItem();
@@ -244,9 +244,20 @@ const ArtistPage = () => {
       <div className="tab-bar">
         <div className="line"></div>
         <div className="tabs">
-          <div className="sub-tabs1">Created</div>
-          <div className="sub-tabs2">Owned</div>
-          <div className="sub-tabs3">Collection</div>
+          <SubTabStyled>
+          <p>Created</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          <SubTabStyled>
+          <p>Owned</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          <SubTabStyled>
+          <p>Collection</p>
+            <div className="sub-tabs1">302</div>
+          </SubTabStyled>
+          
+         
         </div>
       </div>
       <Wrapper>
