@@ -3,7 +3,6 @@ import {create} from 'zustand';
 const useNftItem = create((set) => ({
     data:[],
     fetchData : async (username, page) => {
-        console.log(username + " ---" + page);
         try{
             let limit;
             if (window.innerWidth >= 1200) {
