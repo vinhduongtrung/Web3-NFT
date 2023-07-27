@@ -1,8 +1,9 @@
 import {create} from 'zustand';
 
+const domain1 = "http://18.140.101.238:8088";
+const domain2 = "http://localhost:8080";
 const useCreator = create((set) => ({
     data : [],
-    page : 1,
     fetchData: async () => {
         try{
             let limit;
@@ -13,7 +14,7 @@ const useCreator = create((set) => ({
             } else {
             limit = 5;
             }
-            const res = await fetch(`http://localhost:8080/api/v1/user/getTopUser/${page}/${limit}`, {
+            const res = await fetch(`${domain2}/api/v1/user/getTopUser/1/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

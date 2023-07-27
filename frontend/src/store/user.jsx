@@ -1,11 +1,13 @@
 import { create } from 'zustand';
 
+const domain1 = "http://18.140.101.238:8088";
+const domain2 = "http://localhost:8080";
 const useUser = create((set) => ({
     data: [],
     registerRequest: async (register) => {
         console.log(register);
         try {
-            const res = await fetch("http://localhost:8080/api/v1/auth/register", {
+            const res = await fetch(`${domain2}/api/v1/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -25,7 +27,7 @@ const useUser = create((set) => ({
     },
     loginRequest: async (login) => {
         try {
-            const res = await fetch("http://localhost:8080/api/v1/auth/login", {
+            const res = await fetch("localhost:8080/api/v1/auth/login", {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
