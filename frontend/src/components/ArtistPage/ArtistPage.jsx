@@ -8,7 +8,8 @@ import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import useWallet from "../../store/wallet";
 import useNftItem from "../../store/nftItem";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import NFTCard from "../Card/NFTCard";
 
 const ArtistPageStyled = styled.div`
   height: auto;

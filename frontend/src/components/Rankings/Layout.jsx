@@ -185,89 +185,6 @@ const LayoutRanking = () => {
             <Volume>Volume</Volume>
           </div>
         </div>
-<<<<<<< HEAD
-
-        <StyledTableItemCard
-          id={"1"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Selena Gomez"}
-          change={"1.51"}
-          sold={"200"}
-          volume={"10 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"2"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Jaydon Ekstrom Bothman"}
-          change={"1.51"}
-          sold={"190"}
-          volume={"19 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"3"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Ruben Carder"}
-          change={"1.1"}
-          sold={"520"}
-          volume={"15 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"4"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Alfredo Septimus"}
-          change={"1.51"}
-          sold={"102"}
-          volume={"20 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"5"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Davis Franci"}
-          change={"1.51"}
-          sold={"821"}
-          volume={"10 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"6"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artist={"Livia Rosser"}
-          change={"1.51"}
-          sold={"184"}
-          volume={"20 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"7"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artits={"Kianna Donin"}
-          change={"1.51"}
-          sold={"391"}
-          volume={"20 ETH"}
-        ></StyledTableItemCard>
-        <StyledTableItemCard
-          id={"8"}
-          image={
-            "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
-          }
-          artits={"Phillip Lipshutz"}
-          change={"4"} 
-          sold={"200"}
-          volume={"20 ETH"}
-        ></StyledTableItemCard>
-=======
         {
           data.map((item) =>
             <StyledTableItemCard
@@ -282,7 +199,6 @@ const LayoutRanking = () => {
             </StyledTableItemCard>
           )
         }
->>>>>>> 51fda7f098de60fd21ab5573cfdc986437096d68
       </WrapperItemStyled>
     </LayoutStyled>
   );
