@@ -43,16 +43,11 @@ const ArtistPageStyled = styled.div`
     justify-content: space-around;
   }
   .sub-tabs1 {
+    display: flex;
     width: auto;
     height: auto;
   }
-  .sub-tabs2 {
-    width: auto;
-    height: auto;
-  }
-  .sub-tabs3 {
-   
-  }
+ 
 `;
 const ImageBackground = styled.div`
   width: 100%;
@@ -162,6 +157,7 @@ const SubTabStyled = styled.div`
    width: auto;
     height: auto;
     gap: 16px;
+    display: flex;
 `
 const ArtistPage = () => {
   return (
@@ -219,11 +215,11 @@ const ArtistPage = () => {
             <div className="sub-tabs1">302</div>
           </SubTabStyled>
           <SubTabStyled>
-          <p>Created</p>
+          <p>Owned</p>
             <div className="sub-tabs1">302</div>
           </SubTabStyled>
           <SubTabStyled>
-          <p>Created</p>
+          <p>Collection</p>
             <div className="sub-tabs1">302</div>
           </SubTabStyled>
           

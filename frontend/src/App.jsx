@@ -12,11 +12,11 @@ import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
 import Layout from "./pages/Layout"
+import NFTPage from "./pages/NFTPage/NFTPage"
 function App() {
   return (
     <>
       <Header/>
-
       <Routes>
         <Route path ="/" element ={<Layout/>}>
           <Route index element = {<Home/>}/>
@@ -25,6 +25,7 @@ function App() {
           <Route path="marketplace" element = {<MarketPlace/>}/>
           <Route path="rankings" element = {<Rankings/>}/>
           <Route path="artist-page" element={<ArtistPage/>} />
+          <Route path="nft-details" element={<NFTPage/>} />
         </Route>
         <Route path="/connect" element = {<Connectawwallet/>}/>
         <Route path="/register" element = {<AccountRegister/>}/>

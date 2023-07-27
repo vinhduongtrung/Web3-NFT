@@ -166,79 +166,79 @@ const LayoutRanking = () => {
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
           artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          change={"1.51"}
+          sold={"200"}
+          volume={"10 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"2"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artist={"Selena Gomez"}
-          change={"8"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artist={"Jaydon Ekstrom Bothman"}
+          change={"1.51"}
+          sold={"190"}
+          volume={"19 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"3"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artist={"Ruben Carder"}
+          change={"1.1"}
+          sold={"520"}
+          volume={"15 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"4"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artist={"Alfredo Septimus"}
+          change={"1.51"}
+          sold={"102"}
+          volume={"20 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"5"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artist={"Davis Franci"}
+          change={"1.51"}
+          sold={"821"}
+          volume={"10 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"6"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artist={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artist={"Livia Rosser"}
+          change={"1.51"}
+          sold={"184"}
+          volume={"20 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"7"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artits={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artits={"Kianna Donin"}
+          change={"1.51"}
+          sold={"391"}
+          volume={"20 ETH"}
         ></StyledTableItemCard>
         <StyledTableItemCard
           id={"8"}
           image={
             "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-20@2x.png"
           }
-          artits={"Selena Gomez"}
-          change={"13.22"}
-          sold={"20 ETH"}
-          volume={"20"}
+          artits={"Phillip Lipshutz"}
+          change={"4"} 
+          sold={"200"}
+          volume={"20 ETH"}
         ></StyledTableItemCard>
       </WrapperItemStyled>
     </LayoutStyled>
