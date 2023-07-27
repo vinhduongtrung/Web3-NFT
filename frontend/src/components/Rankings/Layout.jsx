@@ -2,6 +2,8 @@ import styled from "styled-components";
 import Header from "./header_ranking";
 import StyledTableItemCard from "./tableItems";
 import TaskBar from "./Tab_Bar";
+import { useEffect, useState } from "react";
+import useTopCreator from "../../store/topCreator";
 
 const LayoutStyled = styled.div`
   display: flex;
@@ -142,6 +144,30 @@ const Tag = styled.div`
   line-height: 110%;
 `;
 const LayoutRanking = () => {
+  const { data, fetchData } = useTopCreator();
+  const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(5);
+  useEffect(() => {
+    fetchData(page, limit);
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [page])
+  
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
+    ) {
+      setPage((prevPage) => prevPage + 1);
+    }
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <LayoutStyled>
       <Header />
@@ -159,6 +185,7 @@ const LayoutRanking = () => {
             <Volume>Volume</Volume>
           </div>
         </div>
+<<<<<<< HEAD
 
         <StyledTableItemCard
           id={"1"}
@@ -240,6 +267,22 @@ const LayoutRanking = () => {
           sold={"200"}
           volume={"20 ETH"}
         ></StyledTableItemCard>
+=======
+        {
+          data.map((item) =>
+            <StyledTableItemCard
+              key={item.id}
+              id={item.id}
+              image={item.profile}
+              artist={item.username}
+              change={"13.22"}
+              sold={item.totalSales}
+              volume={"20"}
+            >
+            </StyledTableItemCard>
+          )
+        }
+>>>>>>> 51fda7f098de60fd21ab5573cfdc986437096d68
       </WrapperItemStyled>
     </LayoutStyled>
   );

@@ -1,25 +1,11 @@
-
-import Button from '../../components/Button';
+import useWallet from '../../store/wallet';
 import '../Connectawallet/Connectawallet.css'
-import {ethers} from 'ethers'
 
 const Connectawallet = () => {
-
-    const connectMetaMark = () =>{
-        if (window.ethereum && window.ethereum.isMetaMask) {
-
-            window.ethereum.request({ method: 'eth_requestAccounts'})
-            .then(result => {
-                console.log(result[0]);
-            })
-            .catch(error => {
-                console.log(error);
-            
-            });
+    const {connectMetaMark} = useWallet();
     
-        } else {
-            console.log('Need to install MetaMask');
-        }
+    const handleConnect = () => {
+        connectMetaMark();
     }
   return (
     <div>
@@ -33,7 +19,7 @@ const Connectawallet = () => {
                 <p>Choose a wallet you want to connect. There are several wallet providers.</p>
                 </div>
             <div className='Button'>
-                <button onClick={connectMetaMark}> <img src={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/metamask@2x.svg"} alt="" />
+                <button onClick={handleConnect}> <img src={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/metamask@2x.svg"} alt="" />
                 Metamask
                 </button>
                 {/* <button> <img src={"https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/walletconnect@2x.svg"} alt="" />WalletConnect</button>

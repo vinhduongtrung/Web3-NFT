@@ -1,18 +1,19 @@
 import {create} from 'zustand';
 
-const useNftItem = create((set) => ({
-    data:[],
-    fetchData : async (username, page) => {
+const useCreator = create((set) => ({
+    data : [],
+    page : 1,
+    fetchData: async () => {
         try{
             let limit;
             if (window.innerWidth >= 1200) {
-            limit = 9;
+            limit = 12;
             } else if (window.innerWidth >= 768) {
             limit = 6;
             } else {
-            limit = 3;
+            limit = 5;
             }
-            const res = await fetch(`http://localhost:8080/api/v1/nft/findAllByUserName/${username}/${page}/${limit}`, {
+            const res = await fetch(`http://localhost:8080/api/v1/user/getTopUser/${page}/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -27,8 +28,8 @@ const useNftItem = create((set) => ({
             console.log(data);
             set({data})
         }catch(error) {
-            set({data:[]})
+            console.log(error);
         }
     }
 }))
-export default useNftItem;
+export default useCreator;

@@ -6,6 +6,7 @@ import { ReactComponent as User } from "../assets/user.svg";
 import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
+import useWallet from '../store/wallet';
 
 const SHeader = styled.header`
     display: flex;
@@ -111,12 +112,13 @@ const HeaderTop = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-const Header = () => {
+const Header = ({user}) => {
     const [isActive, setActive] = useState(false)
-
+    
     const toggleActive = () => {
         setActive(!isActive)
     }
+    const {hash} = useWallet();
     
     return (
         <SHeader>
@@ -141,7 +143,9 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink to ={'/connect'}>
+                            {hash ? <Button name="Metamark"/> :
                             <Button name="Connect a wallet"/>
+                            }
                         </NavLink>
                     </li>
                     <li>
@@ -151,7 +155,9 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink to ={'/register'}>
+                        {user ? <Button name={user.username}/> : 
                             <Button logo={<User/>} name="Sign Up" classname="signUpBtn"/>
+                        }
                         </NavLink>
                     </li>
                 </ul>

@@ -10,6 +10,7 @@ const Container = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(95px, 1fr));
     gap: 15px;
+    cursor: pointer;
   }
 
 .best-product {
@@ -21,6 +22,7 @@ const Container = styled.div`
     margin:0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
+    cursor: pointer;
 }
 .child {
     height: 95px;
@@ -60,15 +62,14 @@ const CardCollection = ({ item }) => {
     <Container>
       <div className='photo'>
         <div className="best-product"
-          style={{ backgroundImage: `url(${item.collection.best.url})` }}></div>
+          style={{ backgroundImage: `url(${item.data[0].image})` }}></div>
         <div className="product-extra">
-          {item.collection.extra.map((e) =>
-            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.url})` }}></div>
+          {item.data.map((e) =>
+            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}></div>
           )}
-          <div className="child more">{item.collection.total}+</div>
         </div>
       </div>
-      <CollectionInfo collection={item.collection.name} avatar={item.userInfo.avatar} name={item.userInfo.username} />
+      <CollectionInfo collection={item.data[0].name} avatar={item.data[0].image} name={item.username} />
     </Container>
   )
 }

@@ -56,7 +56,7 @@ const NFTPage = () => {
             <div className="placeholder">
                 <img className="placeholder-img" src={PlaceHolder} alt="Placeholder" />
             </div>
-            <div className="layout-body">
+            <div className="layout-bodygit pull origin main">
             <NFTArtistInfoLayout>
                 <div>
                     <h2>
