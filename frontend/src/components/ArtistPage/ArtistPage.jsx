@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button from "../Button/Button";
+import ButtonFollow from "../Button/ButtonFollow";
 import StatsArtist from "./Stats";
 import { ReactComponent as VideoGame } from "../../assets/videogame.svg";
 import { ReactComponent as Youtube } from "../../assets/youtube.svg";
@@ -210,7 +210,7 @@ const ArtistPage = () => {
           <div>
             <h4 className="artist-name">{data.username}</h4>
           </div>
-          <Button hash={hash} />
+          <ButtonFollow hash={hash} />
           <WrapperStats>
             <StatsStyled>
               <StatsArtist volume={"250K+"}></StatsArtist>

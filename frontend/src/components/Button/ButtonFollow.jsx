@@ -12,8 +12,28 @@ flex-direction: column;
        
     }
 `
+const ButtonFollowStyled = styled.button`
+display: flex;
+justify-content: center;
+align-items: center;
+     width: 315px;
+height: 60px;
+padding: 0px 30px 0px 30px;
+border-radius: 20px;
+gap: 12px;
+color: white;
+border: 2px solid black;
+ border-color: #A259FF;
+ background-color: transparent;
+.plus-button {
+    width: 20px;
+    height: 20px;
+    color:red;
+    align-items: center;
+}
+`;
 const ButtonInfo = styled.div`
-         width: 315px;
+ width: 315px;
 height: 60px;
 padding: 0px 30px 0px 30px;
 border-radius: 20px;
@@ -24,37 +44,17 @@ border: 2px solid black;
 
 `
 
-const ButtonFollow = styled.div`
-display: flex;
-justify-content: center;
-align-items: center;
-     width: 315px;
-height: 60px;
-padding: 0px 30px 0px 30px;
-border-radius: 20px;
-gap: 12px;
-border: 2px solid black;
- border-color: #A259FF;
- background-color: transparent;
-.plus-button {
-    width: 20px;
-    height: 20px;
-    color:red;
-    align-items: center;
-}
-;
-`
-const Button = ({hash}) => {
+const ButtonFollow = ({hash}) => {
     return (
         <ButtonArtist>
            <ButtonInfo>
                 <div>{hash}</div>
            </ButtonInfo>
-            <ButtonFollow>
+            <ButtonFollowStyled>
             <img className="plus-button" src={Follow} alt="" />
             <div>Follow</div>
-            </ButtonFollow>
+            </ButtonFollowStyled>
         </ButtonArtist>
     );
 }
-export default Button;
+export default ButtonFollow;
