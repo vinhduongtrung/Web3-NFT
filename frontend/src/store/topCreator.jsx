@@ -6,7 +6,7 @@ const useTopCreator = create((set) => ({
     data : [],
     fetchData: async (page, limit) => {
         try{
-            const res = await fetch(`${domain2}/api/v1/user/getTopUser/${page}/${limit}`, {
+            const res = await fetch(`${domain1}/api/v1/user/getTopUser/${page}/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
