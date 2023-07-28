@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
 import Layout from "./pages/Layout"
 import useUser from "./store/user"
+import NFTPage from "./pages/NFTPage/NFTPage"
 function App() {
   const {user} = useUser();
     
@@ -27,6 +28,7 @@ function App() {
           <Route path="marketplace" element = {<MarketPlace/>}/>
           <Route path="rankings" element = {<Rankings/>}/>
           <Route path="artist/:username" element={<ArtistPage/>} />
+          <Route path="nftdetails" element={<NFTPage/>} />
         </Route>
         <Route path="/connect" element = {<Connectawwallet/>}/>
         <Route path="/register" element = {<AccountRegister/>}/>
