@@ -38,62 +38,6 @@ const Wrapper = styled.div`
     grid-template-columns:repeat(3, minmax(330px, 1fr));
   }
 `
-const data = [
-  {
-    userInfo: {
-      username: "MrFox",
-      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder@2x.png"
-    },
-    collection: {
-      name: "Dsgn Animals",
-      total: 1025,
-      best: {
-        id: 1,
-        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder-1@2x.png"
-      },
-      extra: [
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder@2x.png", id: 2 },
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-1@2x.png", id: 3 },
-      ]
-    },
-  },
-  {
-    userInfo: {
-      username: "Shroomie",
-      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-2@2x.png"
-    },
-    collection: {
-      name: "Magic Mushrooms",
-      total: 1025,
-      best: {
-        id: 4,
-        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder@2x.png"
-      },
-      extra: [
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-2@2x.png", id: 5 },
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-3@2x.png", id: 6 },
-      ]
-    },
-  },
-  {
-    userInfo: {
-      username: "BeKind2Robots",
-      avatar: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/avatar-placeholder-54@2x.png"
-    },
-    collection: {
-      name: "Disco Machines",
-      total: 1025,
-      best: {
-        id: 7,
-        url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/primary-photo-placeholder-5@2x.png"
-      },
-      extra: [
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-10@2x.png", id: 8 },
-        { url: "https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/secondary-photo-placeholder-11@2x.png", id: 9 },
-      ]
-    },
-  },
-]
 
 const Trending = () => {
   const {data, fetchData} = trendingNft();
