@@ -80,6 +80,11 @@ const NFTArtistInfoLayout = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  .view-details {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
 `;
 const RightButtonLayout = styled.div`
   width: 40%;
@@ -152,11 +157,11 @@ const NFTPage = () => {
           </div>
           <div className="detail-nft-page">
             <p className="text-header">Details</p>
-            <div>
+            <div className="view-details">
               <img className="global-icon" src={Global} alt="" />
               View on Etherscan
             </div>
-            <div>
+            <div className="view-details">
               <img className="global-icon" src={Global} alt="" />
               View Original
             </div>
