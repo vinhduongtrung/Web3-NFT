@@ -3,7 +3,7 @@ import PlaceHolder from "../../assets/ImageplaceHolder.svg";
 import CountTimer from "./Countimer";
 import RightArrow from "../../assets/right-arrow.svg";
 import Global from "../../assets/global.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 const PageStyled = styled.div`
   width: 100%;
   height: auto;
@@ -19,7 +19,7 @@ const PageStyled = styled.div`
     @media screen and (min-width: 376px) {
       width: 834px;
       height: 280px;
-      /* margin-left: -18.63%; */
+      margin-left: -18.63%;
     }
     @media screen and (min-width: 835px) {
       min-width: 1423px;
@@ -96,7 +96,7 @@ const ButtonFollowNFTPage = styled.button`
 `;
 const NFTPage = () => {
     const navigate = useNavigate()
-    const username = "Digilab"
+    const {username, id} = useParams();
   return (
     <PageStyled>
       <div className="placeholder">
@@ -105,12 +105,12 @@ const NFTPage = () => {
       <div className="layout-body">
         <NFTArtistInfoLayout>
           <div>
-            <h2>The Orbitians</h2>
+            <h2>{username}</h2>
             <div>Minted on Sep 30, 2022</div>
           </div>
           <div>
             <div>Created By</div>
-            <h5>Orbitian</h5>
+            <h5>{username}</h5>
           </div>
           <div>
             <div>Description</div>

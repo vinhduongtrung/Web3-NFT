@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 import CardCollection from './Card/CardCollection'
 import TextHead from "./Text/TextHead"
 import TextTitle from "./Text/TextTitle"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import trendingNft from '../store/trendingNft';
 
 const STrending = styled.div`
@@ -97,9 +97,17 @@ const data = [
 
 const Trending = () => {
   const {data, fetchData} = trendingNft();
+  const [nfts, setNfts] = useState([]);
+
     useEffect(() => {
-      fetchData();
-    }, [])
+      async function fetchNft() {
+        if(nfts.length === 0) {
+          await fetchData();
+          setNfts(data);
+        }
+      }
+      fetchNft()
+    }, [nfts])
   return (
     <div className="trending">
       <STrending>
@@ -109,7 +117,7 @@ const Trending = () => {
         </div>
         <Wrapper>
           {
-            data.map((item) =>
+            nfts.map((item) =>
               <CardCollection key={Math.random()} item={item} />
             )
           }

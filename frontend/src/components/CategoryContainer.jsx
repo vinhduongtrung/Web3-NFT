@@ -1,5 +1,5 @@
 import { styled } from 'styled-components'
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import CategoryCard from "../components/Card/CategoryCard"
 import useCategory from "../store/category";
 
@@ -36,13 +36,22 @@ const Wrapper = styled.div`
 
 const CategoryContainer = () => {
     const {data, fetchData} = useCategory();
+    const [category, setCategory] = useState([]);
+
     useEffect(() => {
-      fetchData();
-    }, [])
+      async function fetchCategory() {
+        if(category.length === 0) {
+          await fetchData();
+          setCategory(data);
+        }
+      }
+      fetchCategory() 
+    }, [category])
+
     return (
         <Wrapper>
             {
-                data.map((item) =>
+                category.map((item) =>
                     <CategoryCard key={item.id} item={item} />
                 )
             }
