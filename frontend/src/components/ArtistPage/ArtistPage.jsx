@@ -263,7 +263,7 @@ const ArtistPage = () => {
       <Wrapper>
           {data.nft &&
             data.nft.map((item) =>
-              <NFTCard key={item.name} item={item} />
+              <NFTCard key={item.name} item={item} username={data.username}/>
             )
           }
         </Wrapper>
