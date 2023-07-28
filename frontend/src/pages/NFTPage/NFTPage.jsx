@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import PlaceHolder from "../../assets/ImageplaceHolder.svg";
 import CountTimer from "./Countimer";
 import RightArrow from "../../assets/right-arrow.svg";
 import Global from "../../assets/global.svg";
@@ -120,7 +119,7 @@ const NFTPage = () => {
   return (
     <PageStyled>
       <div className="placeholder">
-        <img className="placeholder-img" src={PlaceHolder} alt="Placeholder" />
+        <img className="placeholder-img" src="https://cdn.animaapp.com/projects/63aaf7e2426e9824f0350c11/releases/63aaf8f2426e9824f0350c13/img/image-placeholder-7@1x.png" alt="Placeholder" />
       </div>
       <div className="layout-body">
         <NFTArtistInfoLayout>

@@ -60,21 +60,24 @@ const Container = styled.div`
 `
 const CardCollection = ({ item }) => {
   const navigate = useNavigate();
+  console.log("trending");
   return (
     <Container>
-      <div className='photo'>
-        <div className="best-product"
-          style={{ backgroundImage: `url(${item.data[0].image})`}}
-          onClick={()=> navigate(`/nftdetails/${item.username}/id/${item.data[0].id}`)}>
+      {
+        <div className='photo'>
+          <div className="best-product"
+            style={{ backgroundImage: `url(${item.data[0].image})` }}
+            onClick={() => navigate(`/nftdetails/${item.username}/id/${item.data[0].id}`)}>
           </div>
-        <div className="product-extra">
-          {item.data.map((e) =>
-            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}
-            onClick={()=> navigate(`/nftdetails/${item.username}/id/${e.id}`)}>
-            </div>
-          )}
+          <div className="product-extra">
+            {item && item.data.map((e) =>
+              <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}
+                onClick={() => navigate(`/nftdetails/${item.username}/id/${e.id}`)}>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      }
       <CollectionInfo collection={item.data[0].name} avatar={item.data[0].image} name={item.username} />
     </Container>
   )
