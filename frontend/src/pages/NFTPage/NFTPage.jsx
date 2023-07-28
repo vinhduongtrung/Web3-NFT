@@ -19,10 +19,10 @@ const PageStyled = styled.div`
     @media screen and (min-width: 376px) {
       width: 834px;
       height: 280px;
-      /* margin-left: -18.63%; */
+      margin-left: -20.63%;
     }
     @media screen and (min-width: 835px) {
-      min-width: 1423px;
+      min-width: 1523px;
       height: 540px;
       align-self: stretch;
       object-fit: cover;
