@@ -69,7 +69,7 @@ const RightButtonLayout = styled.div`
   top: 0;
   right: 0;
 `;
-const ButtonFollowNFTPage = styled.div`
+const ButtonFollowNFTPage = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -82,6 +82,10 @@ const ButtonFollowNFTPage = styled.div`
   border: 2px solid black;
   border-color: #a259ff;
   background-color: transparent;
+  cursor: grab;
+  .cursor:hover {
+    color: red;
+  }
   .right-arrow {
     width: 40px;
     height: 20px;
