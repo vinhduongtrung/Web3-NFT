@@ -26,6 +26,7 @@ const getMoreItem = create((set) => ({
                 throw new Error("res not ok")
             }
             const data = await res.json();
+            console.log(data);
             set({data})
         }catch(error) {
             set({data:[]})
