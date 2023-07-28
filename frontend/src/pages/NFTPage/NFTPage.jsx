@@ -3,6 +3,7 @@ import PlaceHolder from "../../assets/ImageplaceHolder.svg";
 import CountTimer from "./Countimer";
 import RightArrow from "../../assets/right-arrow.svg";
 import Global from "../../assets/global.svg";
+import { useNavigate } from "react-router-dom";
 const PageStyled = styled.div`
   width: 100%;
   height: auto;
@@ -94,6 +95,8 @@ const ButtonFollowNFTPage = styled.button`
   }
 `;
 const NFTPage = () => {
+    const navigate = useNavigate()
+    const username = "Digilab"
   return (
     <PageStyled>
       <div className="placeholder">
@@ -152,7 +155,7 @@ const NFTPage = () => {
       </div>
       <div className="footer-nftpage">
         <h1>More From This Artist</h1>
-        <ButtonFollowNFTPage>
+        <ButtonFollowNFTPage onClick={() => navigate(`/artist/${username}`)}>
           <img className="right-arrow" src={RightArrow} alt="" />
           Go to Artist Page
         </ButtonFollowNFTPage>
