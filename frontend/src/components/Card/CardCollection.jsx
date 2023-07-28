@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import CollectionInfo from './CollectionInfo'
+import { useNavigate } from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -58,14 +59,19 @@ const Container = styled.div`
 }
 `
 const CardCollection = ({ item }) => {
+  const navigate = useNavigate();
   return (
     <Container>
       <div className='photo'>
         <div className="best-product"
-          style={{ backgroundImage: `url(${item.data[0].image})` }}></div>
+          style={{ backgroundImage: `url(${item.data[0].image})`}}
+          onClick={()=> navigate(`/nftdetails/${item.username}/id/${item.data[0].id}`)}>
+          </div>
         <div className="product-extra">
           {item.data.map((e) =>
-            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}></div>
+            <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}
+            onClick={()=> navigate(`/nftdetails/${item.username}/id/${e.id}`)}>
+            </div>
           )}
         </div>
       </div>
