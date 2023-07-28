@@ -22,8 +22,8 @@ const Container = styled.div`
     gap: 50px;
   }
 `
-const NFTCard = ({item}) => {
-    const {username, profilePicture, nftName, price, bid, image} = item;
+const NFTCard = ({item, username}) => {
+    const {profilePicture, nftName, price, bid, image} = item;
     const navigate = useNavigate();
     return (
         <Container>
