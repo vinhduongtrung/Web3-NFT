@@ -1,5 +1,6 @@
 import { styled } from 'styled-components'
 import CollectionInfo from "./CollectionInfo"
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -13,6 +14,7 @@ const Container = styled.div`
     margin:0 auto;
     margin-bottom: 20px;
     border-radius: 20px;
+    cursor: pointer;
   }
   .price-info {
     display: flex;
@@ -22,9 +24,13 @@ const Container = styled.div`
 `
 const NFTCard = ({item}) => {
     const {username, profilePicture, nftName, price, bid, image} = item;
+    const navigate = useNavigate();
     return (
         <Container>
-            <div className="cover" style={{ backgroundImage: `url(${image})`}}></div>
+            <div className="cover" style={{ backgroundImage: `url(${image})`}}
+            onClick={()=> navigate(`/nftdetails/${username}/id/1`)}>
+
+            </div>
             <div className="info">
               <CollectionInfo collection={nftName} avatar={profilePicture} name={username}/>
                 <div className="price-info">

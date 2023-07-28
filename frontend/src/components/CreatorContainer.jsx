@@ -40,14 +40,22 @@ const Wrapper = styled.div`
 
 const CreatorContainer = () => {
     const {data, fetchData} = useCreator();
+    const[creators, setCreators] = useState([]);
+
     useEffect(() => {
-        fetchData();
-      }, [fetchData]);
+        async function fetchcreators() {
+        if(creators.length === 0) {
+            await fetchData();
+            setCreators(data);
+            }
+        }
+        fetchcreators();
+      }, [creators]);
 
     return (
         <Wrapper>
             {
-                data.map((item) =>
+                creators.map((item) =>
                     <CreatorCard key={item.username} item={item} />
                 )
             }

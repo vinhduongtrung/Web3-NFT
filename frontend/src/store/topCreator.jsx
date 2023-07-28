@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-const domain1 = "http://18.140.101.238:8088";
+const domain1 = "https://danielaws.tk/group8";
 const domain2 = "http://localhost:8080";
 const useTopCreator = create((set) => ({
     data : [],
