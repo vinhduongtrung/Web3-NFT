@@ -44,6 +44,7 @@ border: 2px solid black;
 
 `
 
+// eslint-disable-next-line react/prop-types
 const ButtonFollow = ({hash}) => {
     return (
         <ButtonArtist>

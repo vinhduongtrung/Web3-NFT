@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useRef } from "react";
 import { useState } from "react";
 import styled from "styled-components";
+import Button from "../../components/Button";
+
 // import Counttimer from "../../assets/counttimer.jpg"
 const CountTimerStyled = styled.div`
   box-sizing: border-box;
@@ -17,6 +19,27 @@ const CountTimerStyled = styled.div`
     background-repeat: no-repeat;
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+  }
+  .button-timer{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 315px;
+  height: 60px;
+  padding: 0px 30px 0px 30px;
+  border-radius: 20px;
+  gap: 12px;
+  color: white;
+  border: 2px solid black;
+  border-color: #a259ff;
+  background-color: transparent;
+  cursor: grab;
+  .cursor:hover {
+    color: red;
+  }
   }
   .timer {
     background-color: #3b3b3b;
@@ -130,6 +153,7 @@ const CountTimer = () => {
             </section>
           </div>
         </section>
+        <Button classname="button-timer"  name="Place Bid"/>
       </section>
     </CountTimerStyled>
   );
