@@ -6,7 +6,7 @@ const useCategory = create((set) => ({
     data:[],
     fetchData : async () => {
         try{
-            const res = await fetch(`${domain2}/api/v1/category/getAll`, {
+            const res = await fetch(`${domain1}/api/v1/category/getAll`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

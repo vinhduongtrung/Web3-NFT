@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-const domain1 = "http://18.140.101.238:8088";
+const domain1 = "https://danielaws.tk/group8";
 const domain2 = "http://localhost:8080";
 const useNftItem = create((set) => ({
     data:[],
@@ -14,7 +14,7 @@ const useNftItem = create((set) => ({
             } else {
             limit = 3;
             }
-            const res = await fetch(`${domain2}/api/v1/nft/findAllByUserName/${username}/${page}/${limit}`, {
+            const res = await fetch(`${domain1}/api/v1/nft/findAllByUserName/${username}/${page}/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
