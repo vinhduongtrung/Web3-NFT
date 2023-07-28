@@ -5,14 +5,14 @@ import styled from "styled-components";
 // import Counttimer from "../../assets/counttimer.jpg"
 const CountTimerStyled = styled.div`
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 40px;
   padding: 0;
-  width: auto;
+  width: 100%;
   height: auto;
   display: flex;
   .timer-container {
     background-color: #3b3b3b;
-    /* background-image: url("../../assets/counttimer.jpg"); */
+    /* background-image: url("../../assets/artist1.jpg"); */
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -34,7 +34,7 @@ const CountTimerStyled = styled.div`
   .timer div:first-child {
     text-align: center;
   }
-  h5 {
+  h4 {
     font-weight: 400px;
     font-size: 12px;
     line-height: 13.2px;
@@ -44,8 +44,8 @@ const CountTimerStyled = styled.div`
     border: 1px solid #3b3b3b;
     border-radius: 3px;
     display: flex;
-    margin-top: 3em;
-    padding: 3em;
+     margin-top: 3em;
+    padding: 1em; 
     text-align: center;
   }
   section p:first-child,
@@ -104,10 +104,10 @@ const CountTimer = () => {
     <CountTimerStyled>
       <section className="timer-container">
         <section className="timer">
-          {/* <div> */}
+          <div className="calendar-clock">
           {/* <span className="calendar-clock"></span> */}
-          <h5 className="calendar-clock">Auctions end in:</h5>
-          {/* </div> */}
+          <h1 className="">Auctions end in:</h1>
+          </div>
           <div className="timer-clock">
           <section>
               <p>{timerDays} </p>
