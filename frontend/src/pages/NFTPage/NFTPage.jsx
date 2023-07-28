@@ -10,7 +10,7 @@ const PageStyled = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 10px;
+  padding: 10px 0;
   .placeholder-img {
     width: 375px;
     height: 250px;
@@ -19,10 +19,10 @@ const PageStyled = styled.div`
     @media screen and (min-width: 376px) {
       width: 834px;
       height: 280px;
-      /* margin-left: -18.63%; */
+      margin-left: -18.63%;
     }
     @media screen and (min-width: 835px) {
-      min-width: 1423px;
+      min-width: 1523px;
       height: 540px;
       align-self: stretch;
       object-fit: cover;
@@ -36,7 +36,7 @@ const PageStyled = styled.div`
   .footer-nftpage {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `;
 const NFTArtistInfoLayout = styled.div`
@@ -59,6 +59,26 @@ const NFTArtistInfoLayout = styled.div`
     gap: 10px;
     width: auto;
     height: auto;
+  }
+  .tags {
+    width: fit-content;
+    height: auto;
+    border: 2px;
+    border-radius: 20px;
+    color: white;
+    background-color: #3B3B3B;
+    justify-content: space-around;
+  }
+  .text-header {
+    font-family: monospace;
+    color: #858584;
+    line-height: 35px;
+    font-weight: 700px;
+    font-size: 22px;
+  }
+  .tag-names {
+    display: flex;
+    justify-content: space-between;
   }
 `;
 const RightButtonLayout = styled.div`
@@ -106,14 +126,14 @@ const NFTPage = () => {
         <NFTArtistInfoLayout>
           <div>
             <h2>The Orbitians</h2>
-            <div>Minted on Sep 30, 2022</div>
+            <div className="text-header">Minted on Sep 30, 2022</div>
           </div>
           <div>
-            <div>Created By</div>
+            <div className="text-header">Created By</div>
             <h5>Orbitian</h5>
           </div>
           <div>
-            <div>Description</div>
+            <div className="text-header">Description</div>
             <blockquote>
               The Orbitians <br></br>
               is a collection of 10,000 unique NFTs on the Ethereum blockchain.
@@ -131,7 +151,7 @@ const NFTPage = () => {
             </blockquote>
           </div>
           <div className="detail-nft-page">
-            <p>Details</p>
+            <p className="text-header">Details</p>
             <div>
               <img className="global-icon" src={Global} alt="" />
               View on Etherscan
@@ -141,12 +161,17 @@ const NFTPage = () => {
               View Original
             </div>
           </div>
-          <div>
-            <p>Tags</p>
-            <div>ANIMATION</div>
-            <div>ILLUSTRATION</div>
-            <div>MOON</div>
-            <div>DARK</div>
+          <p className="text-header">Tags</p>
+
+          <div className="tag-names">
+            {/* <button className="tags">ANIMATION</button>
+            <button className="tags">ILLUSTRATION</button>
+            <button className="tags">MOON</button>
+            <button className="tags">DARK</button> */}
+            <div className="tags">ANIMATION</div>
+            <div className="tags">ILLUSTRATION</div>
+            <div className="tags">MOON</div>
+            <div className="tags">DARK</div>
           </div>
         </NFTArtistInfoLayout>
         <RightButtonLayout>
