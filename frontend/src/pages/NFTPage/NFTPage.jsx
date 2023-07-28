@@ -56,7 +56,7 @@ const NFTPage = () => {
             <div className="placeholder">
                 <img className="placeholder-img" src={PlaceHolder} alt="Placeholder" />
             </div>
-            <div className="layout-bodygit pull origin main">
+            <div className="layout-body">
             <NFTArtistInfoLayout>
                 <div>
                     <h2>
@@ -100,7 +100,16 @@ These Orbitians are a peaceful race, but they have been at war with a group of i
                     Tags
                     </p>
                     <div>
-
+                        ANIMATION
+                    </div>
+                    <div>
+                        ANIMATION
+                    </div>
+                    <div>
+                        ANIMATION
+                    </div>
+                    <div>
+                        ANIMATION
                     </div>
                 </div>
             </NFTArtistInfoLayout>
@@ -108,7 +117,22 @@ These Orbitians are a peaceful race, but they have been at war with a group of i
             <CountTimer></CountTimer>
             </RightButtonLayout>
             </div>
+            <div>
+                <h5>
+                    More From This Artist
+                </h5>
+                <div>
+                    <div>
+                        <img src="" alt="" />
+                    </div>
+                <button>
+                    Goto Artist Page
+                </button>
+                </div>
+               
+            </div>
         </PageStyled>
+
     )
 };
 export default NFTPage;
