@@ -52,6 +52,13 @@ const NFTArtistInfoLayout = styled.div`
     width: 20px;
     height: 20px;
   }
+  .detail-nft-page {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: auto;
+    height: auto;
+  }
 `;
 const RightButtonLayout = styled.div`
   width: 40%;
@@ -116,7 +123,7 @@ const NFTPage = () => {
               human beings their target. <br />
             </blockquote>
           </div>
-          <div>
+          <div className="detail-nft-page">
             <p>Details</p>
             <div>
               <img className="global-icon" src={Global} alt="" />
