@@ -14,7 +14,7 @@ const trendingNft = create((set) => ({
             } else {
             limit = 1;
             }
-            const res = await fetch(`${domain1}/api/v1/nft/getTrendingNft/${limit}`, {
+            const res = await fetch(`${domain2}/api/v1/nft/getTrendingNft/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

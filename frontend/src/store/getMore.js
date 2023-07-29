@@ -14,7 +14,7 @@ const getMoreItem = create((set) => ({
             } else {
             limit = 3;
             }
-            const res = await fetch(`${domain1}/api/v1/nft/getMoreNft/${limit}`, {
+            const res = await fetch(`${domain2}/api/v1/nft/getMoreNft/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',

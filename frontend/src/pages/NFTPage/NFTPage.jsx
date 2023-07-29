@@ -3,6 +3,9 @@ import CountTimer from "./Countimer";
 import RightArrow from "../../assets/right-arrow.svg";
 import Global from "../../assets/global.svg";
 import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
+import getMoreItem from "../../store/getMore";
+import NFTCard from "../../components/Card/NFTCard";
 const PageStyled = styled.div`
   width: 100%;
   height: auto;
@@ -10,22 +13,17 @@ const PageStyled = styled.div`
   flex-direction: column;
   gap: 10px;
   padding: 10px 0;
+  margin-bottom: 40px;
+  .nft-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
   .placeholder-img {
-    width: 375px;
-    height: 250px;
-    margin-left: -10.63%;
+    height: 300px;
     object-fit: cover;
-    @media screen and (min-width: 376px) {
-      width: 834px;
-      height: 280px;
-      margin-left: -18.63%;
-    }
-    @media screen and (min-width: 835px) {
-      min-width: 1523px;
-      height: 540px;
-      align-self: stretch;
-      object-fit: cover;
-    }
+    width: 100%;
   }
   .layout-body {
     width: 100%;
@@ -38,6 +36,24 @@ const PageStyled = styled.div`
     justify-content: space-between;
   }
 `;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+
+  @media (min-width: 834px) {
+  grid-template-columns: repeat(2, minmax(330px, 1fr));
+  .child {
+    height: 100px;
+  }
+  .best-product {
+    width: 330px;
+    height: 330px;
+  }
+}
+  @media (min-width: 1024px) {
+    grid-template-columns:repeat(3, minmax(330px, 1fr));
+  }
+`
 const NFTArtistInfoLayout = styled.div`
   width: 60%;
   height: auto;
@@ -114,8 +130,12 @@ const ButtonFollowNFTPage = styled.button`
   }
 `;
 const NFTPage = () => {
-    const navigate = useNavigate()
-    const {username, id} = useParams();
+  const navigate = useNavigate()
+  const { username, id } = useParams();
+  const { data, fetchData } = getMoreItem();
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <PageStyled>
       <div className="placeholder">
@@ -163,20 +183,17 @@ const NFTPage = () => {
           <p className="text-header">Tags</p>
 
           <div className="tag-names">
-            {/* <button className="tags">ANIMATION</button>
-            <button className="tags">ILLUSTRATION</button>
-            <button className="tags">MOON</button>
-            <button className="tags">DARK</button> */}
             <div className="tags">ANIMATION</div>
             <div className="tags">ILLUSTRATION</div>
             <div className="tags">MOON</div>
             <div className="tags">DARK</div>
           </div>
         </NFTArtistInfoLayout>
-        <RightButtonLayout>
+        {/* <RightButtonLayout>
           <CountTimer></CountTimer>
-        </RightButtonLayout>
+        </RightButtonLayout> */}
       </div>
+      <div className="nft-bottom">
       <div className="footer-nftpage">
         <h1>More From This Artist</h1>
         <ButtonFollowNFTPage onClick={() => navigate(`/artist/${username}`)}>
@@ -184,6 +201,15 @@ const NFTPage = () => {
           Go to Artist Page
         </ButtonFollowNFTPage>
       </div>
+      <Wrapper>
+          {
+            data.map((item) =>
+              <NFTCard key={item.nftName} item={item} />
+            )
+          }
+        </Wrapper>
+      </div>
+      
     </PageStyled>
   );
 };

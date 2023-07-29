@@ -22,8 +22,8 @@ const Container = styled.div`
     gap: 50px;
   }
 `
-const NFTCard = ({item, username}) => {
-    const {profilePicture, nftName, price, bid, image} = item;
+const NFTCard = ({item}) => {
+    const {profilePicture, nftName, price, bid, image, username} = item;
     const navigate = useNavigate();
     return (
         <Container>
@@ -35,7 +35,7 @@ const NFTCard = ({item, username}) => {
               <CollectionInfo collection={nftName} avatar={profilePicture} name={username}/>
                 <div className="price-info">
                     <div className="price">Price {price} ETH</div>
-                    <div className="bid">Highest Bid {bid} wETH</div>
+                    <div className="bid">Bid {bid} wETH</div>
                 </div>
             </div>
         </Container>

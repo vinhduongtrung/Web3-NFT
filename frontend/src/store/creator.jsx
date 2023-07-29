@@ -14,7 +14,7 @@ const useCreator = create((set) => ({
             } else {
             limit = 5;
             }
-            const res = await fetch(`${domain1}/api/v1/user/getTopUser/1/${limit}`, {
+            const res = await fetch(`${domain2}/api/v1/user/getTopUser/1/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
