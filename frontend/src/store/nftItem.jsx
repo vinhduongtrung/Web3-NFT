@@ -14,7 +14,7 @@ const useNftItem = create((set) => ({
             } else {
             limit = 3;
             }
-            const res = await fetch(`${domain1}/api/v1/nft/findAllByUserName/${username}/${page}/${limit}`, {
+            const res = await fetch(`${domain2}/api/v1/nft/findAllByUserName/${username}/${page}/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
