@@ -3,7 +3,7 @@ import Header from "./header_ranking";
 import StyledTableItemCard from "./tableItems";
 import TaskBar from "./Tab_Bar";
 import { useEffect, useState } from "react";
-import useTopCreator from "../../store/topCreator";
+import useTopCreator from "../../store/useTopCreator";
 
 const LayoutStyled = styled.div`
   display: flex;
@@ -146,9 +146,15 @@ const Tag = styled.div`
 const LayoutRanking = () => {
   const { data, fetchData } = useTopCreator();
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(5);
+  const limit = 5;
+
   useEffect(() => {
-    fetchData(page, limit);
+     const callApi = async ()=> {
+      fetchData(page, limit);
+    }
+    if(data.length < 8) {
+      callApi()
+    }
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);

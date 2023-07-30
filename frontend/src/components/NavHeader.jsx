@@ -7,6 +7,7 @@ import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import useWallet from '../store/wallet';
+import useUser from '../store/user';
 
 const SHeader = styled.header`
     display: flex;
@@ -112,9 +113,9 @@ const HeaderTop = styled.div`
     justify-content: space-between;
     align-items: center;
 `
-const Header = ({user}) => {
+const Header = () => {
     const [isActive, setActive] = useState(false)
-    
+    const {user} = useUser();
     const toggleActive = () => {
         setActive(!isActive)
     }

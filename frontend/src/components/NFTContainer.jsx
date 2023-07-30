@@ -1,8 +1,7 @@
 import { styled } from 'styled-components'
 import { useEffect } from "react"
 import NFTCard from './Card/NFTCard';
-import getMoreItem from '../store/getMore';
-
+import useGetMore from '../store/useGetMore';
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
@@ -23,10 +22,17 @@ const Wrapper = styled.div`
 `
 
 const NFTContainer = () => {
-  const {data, fetchData} = getMoreItem();
+  const { data, fetchData } = useGetMore();
+
   useEffect(() => {
-    fetchData();
+    const callApi = async () => {
+      await fetchData();
+    }
+    if (data.length === 0) {
+      callApi();
+    }
   }, []);
+
   return (
     <Wrapper>
       {

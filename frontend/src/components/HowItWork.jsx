@@ -21,9 +21,6 @@ const Wrapper = styled.div`
     border-radius: 20px;
   }
   @media (min-width: 834px) {
-    grid-template-columns: repeat(2, minmax(auto, 1fr));
-  }
-  @media (min-width: 1440px) {
     grid-template-columns: repeat(3, minmax(auto, 1fr));
   }
 `

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import getMoreItem from "../store/getMore";
+import { useEffect } from "react";
 import { styled } from "styled-components";
 import NFTCard from "../components/Card/NFTCard";
 import TextHead from "../components/Text/TextHead";
 import TextTitle from "../components/Text/TextTitle";
+import useGetMore from "../store/useGetMore";
 
 const Wrapper = styled.div`
   display: grid;
@@ -29,18 +29,16 @@ const SMarketPlace = styled.div`
 `
 
 const MarketPlace = () => {
-  const [nfts, setNfts] = useState([]);
-  const { data, fetchData } = getMoreItem();
+  const { data, fetchData } = useGetMore();
 
   useEffect(() => {
     const callApi = async () => {
-      if(nfts.length === 0 ) {
         await fetchData();
-        setNfts(data);
       }
+    if(data.length === 0) {
+      callApi();
     }
-    callApi();
-  }, [nfts]);
+  }, []);
   return (
     <SMarketPlace>
       <div style={{marginBottom : "40px"}}>
@@ -48,11 +46,10 @@ const MarketPlace = () => {
         <TextTitle text="Browse through more than 50k NFTs on the NFT Marketplace" />
       </div>
       <Wrapper>
-        { nfts ?
-          nfts.map((item) =>
+        { 
+          data.map((item) =>
             <NFTCard key={item.nftName} item={item} />
           )
-          :<div>no data</div>
         }
       </Wrapper>
     </SMarketPlace>

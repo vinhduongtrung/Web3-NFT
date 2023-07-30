@@ -2,6 +2,8 @@ import {create} from 'zustand';
 
 const domain1 = "https://danielaws.tk/group8";
 const domain2 = "http://localhost:8080";
+
+
 const useTopCreator = create((set) => ({
     data : [],
     fetchData: async (page, limit) => {

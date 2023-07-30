@@ -16,7 +16,7 @@ const Discover = () => {
         <TextHead text="Discover More Nfts" />
         <TextTitle text="Explore New Trending Nfts" />
       </div>
-      <NFTContainer />
+      <NFTContainer/>
     </SDiscover>
   )
 }

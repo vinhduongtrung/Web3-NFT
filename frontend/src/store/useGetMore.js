@@ -2,11 +2,20 @@ import {create} from 'zustand';
 
 const domain1 = "https://danielaws.tk/group8";
 const domain2 = "http://localhost:8080";
-const useCategory = create((set) => ({
+
+const useGetMore = create((set) => ({
     data:[],
     fetchData : async () => {
         try{
-            const res = await fetch(`${domain2}/api/v1/category/getAll`, {
+            let limit;
+            if (window.innerWidth >= 1200) {
+            limit = 3;
+            } else if (window.innerWidth >= 768) {
+            limit = 2;
+            } else {
+            limit = 3;
+            }
+            const res = await fetch(`${domain2}/api/v1/nft/getMoreNft/${limit}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
@@ -18,11 +27,11 @@ const useCategory = create((set) => ({
                 throw new Error("res not ok")
             }
             const data = await res.json();
+            console.log(data);
             set({data})
         }catch(error) {
             set({data:[]})
         }
     }
 }))
-
-export default useCategory
+export default useGetMore;

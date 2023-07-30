@@ -6,8 +6,8 @@ import { ReactComponent as Youtube } from "../../assets/youtube.svg";
 import { ReactComponent as Twitter } from "../../assets/twitter.svg";
 import { ReactComponent as Instagram } from "../../assets/instagram.svg";
 import useWallet from "../../store/wallet";
-import useNftItem from "../../store/nftItem";
 import { useParams } from "react-router-dom";
+import useGetNFT from "../../store/useGetNFT";
 import { useEffect } from "react";
 import NFTCard from "../Card/NFTCard";
 
@@ -185,11 +185,16 @@ const SubTabStyled = styled.div`
 `
 const ArtistPage = () => {
   const { hash } = useWallet();
-  const { data, fetchData } = useNftItem();
-
   const {username} = useParams();
+  const { data, fetchData } = useGetNFT();
+
   useEffect(() => {
-    fetchData(username, 1);
+    const callApi = async () => {
+      await fetchData(username, 1);
+    }
+    if (data.length === 0) {
+      callApi();
+    }
   }, [])
 
   return (
