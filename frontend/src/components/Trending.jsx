@@ -22,6 +22,7 @@ const STrending = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 20px;
   
   @media (min-width: 834px) {
   display: grid;
@@ -61,7 +62,7 @@ const Trending = () => {
         <Wrapper>
           {
             data.map((item) =>
-              <CardCollection key={Math.random()} item={item} />
+              <CardCollection key={item.username} item={item} />
             )
           }
         </Wrapper>

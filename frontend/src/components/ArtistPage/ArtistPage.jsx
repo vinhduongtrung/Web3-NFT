@@ -208,7 +208,7 @@ const ArtistPage = () => {
         />
         <ImageArtist
           src={data.profilePicture}
-          alt="Ảnh Artist"
+          alt="user picture"
         ></ImageArtist>
       </ImageBackground>
       <WrapperArtistInfo>

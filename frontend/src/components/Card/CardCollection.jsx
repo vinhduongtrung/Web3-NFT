@@ -60,7 +60,9 @@ const Container = styled.div`
 `
 const CardCollection = ({ item }) => {
   const navigate = useNavigate();
-  const clone = item.data.splice(1);
+  const clone = item.data.slice();
+  clone.shift();
+  
   return (
     <Container>
       {

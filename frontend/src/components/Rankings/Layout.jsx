@@ -2,8 +2,7 @@ import styled from "styled-components";
 import Header from "./header_ranking";
 import StyledTableItemCard from "./tableItems";
 import TaskBar from "./Tab_Bar";
-import { useEffect, useState } from "react";
-import useTopCreator from "../../store/useTopCreator";
+import { useEffect, useRef, useState } from "react";
 
 const LayoutStyled = styled.div`
   display: flex;
@@ -30,9 +29,6 @@ const WrapperItemStyled = styled.div`
     height: 46px;
     width: 100%;
     height: 46px;
-    /* @media screen and (min-width: 376px) {
-    width: auto;
-   } */
   }
 
   .table-header-left-ranking {
@@ -41,9 +37,6 @@ const WrapperItemStyled = styled.div`
     gap: 20px;
     width: 400px;
     align-items: center;
-    /* @media screen and (max-width: 375px) {
-    width: 215px;
-   } */
     @media (min-width: 375px) and (max-width: 835px) {
       width: auto;
 
@@ -144,65 +137,82 @@ const Tag = styled.div`
   line-height: 110%;
 `;
 const LayoutRanking = () => {
-  const { data, fetchData } = useTopCreator();
-  const [page, setPage] = useState(1);
-  const [total, setTotal] = useState(12);
+  const listInnerRef = useRef();
+  const [currPage, setCurrPage] = useState(1);
+  const [prevPage, setPrevPage] = useState(0);
+  const [userList, setUserList] = useState([]);
+  const [wasLastList, setWasLastList] = useState(false);
   const limit = 5;
 
-  
   useEffect(() => {
-    const callApi = async ()=> {
-      await fetchData(page, limit);
+    const fetchData = async () => {
+      const response = await fetch(`https://danielaws.tk/group8/api/v1/user/getTopUser/${currPage}/${limit}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      if (!data.length) {
+        setWasLastList(true);
+        return;
+      }
+      setPrevPage(currPage);
+      setUserList([...userList, ...data]);
     }
-    if(data.length === 0 || (page > 1) && data.length < total) {
-      console.log("page : " + page);
-      callApi()
+
+    if (!wasLastList && prevPage !== currPage) {
+      fetchData();
     }
     window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [page])
-  
+        window.removeEventListener('scroll', handleScroll);
+      };
+  }, [currPage, wasLastList, prevPage, userList])
+
   const handleScroll = () => {
     if (
       window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
     ) {
-      setPage((prevPage) => prevPage + 1);
+      setCurrPage(currPage + 1);
     }
   };
   return (
-    <LayoutStyled>
-      <Header />
-      <TaskBar />
-      <WrapperItemStyled>
-        <div className="table-header">
-          <div className="table-header-left-ranking">
-            <Tag>#</Tag>
-            <Artist>Artist</Artist>
+      <LayoutStyled>
+        <Header />
+        <TaskBar />
+        <WrapperItemStyled>
+          <div className="table-header">
+            <div className="table-header-left-ranking">
+              <Tag>#</Tag>
+              <Artist>Artist</Artist>
+            </div>
+            <div className="table-header-right-stats">
+              <Change>Change</Change>
+              <Sold>NFTs Sold</Sold>
+              <Volume>Volume</Volume>
+            </div>
           </div>
-          <div className="table-header-right-stats">
-            <Change>Change</Change>
-            <Sold>NFTs Sold</Sold>
-            <Volume>Volume</Volume>
+          <div ref={listInnerRef}>
+            {
+            userList.map((item) =>
+              <StyledTableItemCard
+                key={item.id}
+                id={item.id}
+                image={item.profile}
+                artist={item.username}
+                change={"13.22"}
+                sold={item.totalSales}
+                volume={"20"}
+              >
+              </StyledTableItemCard>
+            )
+          }
           </div>
-        </div>
-        {
-          data.map((item) =>
-            <StyledTableItemCard
-              key={item.id}
-              id={item.id}
-              image={item.profile}
-              artist={item.username}
-              change={"13.22"}
-              sold={item.totalSales}
-              volume={"20"}
-            >
-            </StyledTableItemCard>
-          )
-        }
-      </WrapperItemStyled>
-    </LayoutStyled>
+        </WrapperItemStyled>
+      </LayoutStyled>
   );
 };
 export default LayoutRanking;

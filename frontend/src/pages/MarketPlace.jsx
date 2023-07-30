@@ -1,13 +1,13 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
 import NFTCard from "../components/Card/NFTCard";
 import TextHead from "../components/Text/TextHead";
 import TextTitle from "../components/Text/TextTitle";
-import useGetMore from "../store/useGetMore";
 
 const Wrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 10px;
 
   @media (min-width: 834px) {
   grid-template-columns: repeat(2, minmax(330px, 1fr));
@@ -29,33 +29,72 @@ const SMarketPlace = styled.div`
 `
 
 const MarketPlace = () => {
-  const { data, fetchData } = useGetMore();
+  const listInnerRef = useRef();
+  const [currPage, setCurrPage] = useState(1);
+  const [prevPage, setPrevPage] = useState(0);
+  const [nftList, setNFTList] = useState([]);
+  const [wasLastList, setWasLastList] = useState(false);
 
   useEffect(() => {
-    const callApi = async () => {
-        await fetchData();
+    const fetchData = async () => {
+      let limit;
+      if (window.innerWidth >= 1200) {
+        limit = 6;
+      } else if (window.innerWidth >= 768) {
+        limit = 6;
+      } else {
+        limit = 3;
       }
-    if(data.length === 0) {
-      callApi();
+      const response = await fetch(`https://danielaws.tk/group8/api/v1/nft/findAll/${currPage}/${limit}`, {
+        method: 'GET',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+      });
+      const data = await response.json();
+      console.log(data);
+      if (!data.length) {
+        setWasLastList(true);
+        return;
+      }
+      setPrevPage(currPage);
+      setNFTList([...nftList, ...data])
     }
-  }, []);
+    if (!wasLastList && prevPage !== currPage) {
+      fetchData();
+    }
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [currPage, wasLastList, prevPage, nftList]);
+  const handleScroll = () => {
+    if (
+      window.innerHeight + document.documentElement.scrollTop === document.documentElement.offsetHeight
+    ) {
+      setCurrPage(currPage + 1);
+    }
+  };
   return (
     <SMarketPlace>
-      <div style={{marginBottom : "40px"}}>
+      <div style={{ marginBottom: "40px" }}>
         <TextHead text="Browse Marketplace" />
         <TextTitle text="Browse through more than 50k NFTs on the NFT Marketplace" />
       </div>
-      <Wrapper>
-        { 
-          data.map((item) =>
-            <NFTCard
-             key={item.id}
-             item={item}
-             username={item.username}
-             profile = {item.profilePicture} />
-          )
-        }
-      </Wrapper>
+      <div ref={listInnerRef}>
+        <Wrapper>
+          {
+            nftList.map((item) =>
+              <NFTCard
+                key={item.id}
+                item={item}
+                username={item.username}
+                profile={item.profilePicture} />
+            )
+          }
+        </Wrapper>
+      </div>
     </SMarketPlace>
   )
 }
