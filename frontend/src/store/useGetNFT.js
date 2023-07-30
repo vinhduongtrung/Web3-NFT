@@ -2,7 +2,8 @@ import {create} from 'zustand';
 
 const domain1 = "https://danielaws.tk/group8";
 const domain2 = "http://localhost:8080";
-const useNftItem = create((set) => ({
+
+const useGetNFT = create((set) => ({
     data:[],
     fetchData : async (username, page) => {
         try{
@@ -33,4 +34,4 @@ const useNftItem = create((set) => ({
         }
     }
 }))
-export default useNftItem;
+export default useGetNFT;

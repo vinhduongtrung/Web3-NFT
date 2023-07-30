@@ -60,7 +60,6 @@ const Container = styled.div`
 `
 const CardCollection = ({ item }) => {
   const navigate = useNavigate();
-  console.log("trending");
   return (
     <Container>
       {

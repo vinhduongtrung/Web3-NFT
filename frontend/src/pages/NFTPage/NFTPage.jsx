@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import CountTimer from "./Countimer";
 import RightArrow from "../../assets/right-arrow.svg";
 import Global from "../../assets/global.svg";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
-import getMoreItem from "../../store/getMore";
 import NFTCard from "../../components/Card/NFTCard";
+import useGetMore from "../../store/useGetMore";
 const PageStyled = styled.div`
   width: 100%;
   height: auto;
@@ -96,15 +95,15 @@ const NFTArtistInfoLayout = styled.div`
     justify-content: space-between;
   }
 `;
-const RightButtonLayout = styled.div`
-  width: 40%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
+// const RightButtonLayout = styled.div`
+//   width: 40%;
+//   height: auto;
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// `;
 const ButtonFollowNFTPage = styled.button`
   display: flex;
   justify-content: center;
@@ -132,10 +131,18 @@ const ButtonFollowNFTPage = styled.button`
 const NFTPage = () => {
   const navigate = useNavigate()
   const { username, id } = useParams();
-  const { data, fetchData } = getMoreItem();
+
+  const { data, fetchData } = useGetMore();
+
   useEffect(() => {
-    fetchData();
+    const callApi = async () => {
+      await fetchData();
+    }
+    if (data.length === 0) {
+      callApi();
+    }
   }, []);
+
   return (
     <PageStyled>
       <div className="placeholder">

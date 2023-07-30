@@ -3,28 +3,23 @@ import Footer from "./components/Footer"
 import Home from "./pages/Home"
 import AccountRegister from "./pages/AccountRegister/AccountRegister"
 import Connectawwallet from "./pages/Connectawallet/Connectawallet"
-import NFT from "./pages/NFT"
 import MarketPlace from "./pages/MarketPlace"
-import Rankings from "./pages/Rankings"
-import "./index.css";
 import { Route, Routes } from "react-router-dom";
 import ArtistPage from "./components/ArtistPage/ArtistPage"
 import Layout from "./pages/Layout"
-import useUser from "./store/user"
 import NFTPage from "./pages/NFTPage/NFTPage"
+import LayoutRanking from "./components/Rankings/Layout"
+import "./index.css"; 
+
 function App() {
-  const {user} = useUser();
-    
   return (
     <>
-      <Header user={user}/>
-
+      <Header/>
       <Routes>
         <Route path ="/" element ={<Layout/>}>
           <Route index element = {<Home/>}/>
-          <Route path="nft/:id" element = {<NFT/>}/>
           <Route path="marketplace" element = {<MarketPlace/>}/>
-          <Route path="rankings" element = {<Rankings/>}/>
+          <Route path="rankings" element = {<LayoutRanking/>}/>
           <Route path="artist/:username" element={<ArtistPage/>} />
           <Route path="nftdetails/:username/id/:id" element={<NFTPage/>} />
         </Route>

@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import CreatorCard from './Card/CreatorCard';
-import useCreator from '../store/creator';
+import useCreator from '../store/useCreator';
 
 const Wrapper = styled.div`
   display: grid;
@@ -39,23 +39,21 @@ const Wrapper = styled.div`
 `
 
 const CreatorContainer = () => {
-    const {data, fetchData} = useCreator();
-    const[creators, setCreators] = useState([]);
+    const { data, fetchData } = useCreator();
 
     useEffect(() => {
-        async function fetchcreators() {
-        if(creators.length === 0) {
+        async function callApi() {
             await fetchData();
-            setCreators(data);
-            }
         }
-        fetchcreators();
-      }, [creators]);
+        if (data.length === 0) {
+            callApi();
+        }
+    }, []);
 
     return (
         <Wrapper>
             {
-                creators.map((item) =>
+                data.map((item) =>
                     <CreatorCard key={item.username} item={item} />
                 )
             }
