@@ -6,6 +6,7 @@ const domain2 = "http://localhost:8080";
 
 const useTopCreator = create((set) => ({
     data : [],
+    
     fetchData: async (page, limit) => {
         try{
             const res = await fetch(`${domain1}/api/v1/user/getTopUser/${page}/${limit}`, {
@@ -20,7 +21,7 @@ const useTopCreator = create((set) => ({
                 throw new Error("res not ok")
             }
             const newData = await res.json();
-           console.log(newData);
+            console.log(newData);
             set((prev) => ({
                 data: [...prev.data, ...newData]
             }));

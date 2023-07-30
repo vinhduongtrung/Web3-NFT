@@ -48,7 +48,7 @@ const ButtonFollow = ({hash}) => {
     return (
         <ButtonArtist>
            <ButtonInfo>
-                <div>{hash}</div>
+                <div>{hash.substring(0,6)}...{hash.substring(38)}</div>
            </ButtonInfo>
             <ButtonFollowStyled>
             <img className="plus-button" src={Follow} alt="" />

@@ -4,7 +4,7 @@ import User from '../../assets/Account/User.svg'
 import email from '../../assets/Account/Email.svg'
 import Lockkey from '../../assets/Account/Lockkey.svg'
 import { useNavigate } from "react-router-dom";
-import useUser from '../../store/user'
+import useUser from '../../store/useUser'
 
 const AccountRegister = () => {
   const [register, setRegister] = useState({

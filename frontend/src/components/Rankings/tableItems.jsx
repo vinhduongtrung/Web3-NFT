@@ -112,7 +112,6 @@ width: 80px;
     }
 `;
 
-// eslint-disable-next-line react/prop-types
 const TableItems = ({ image, id, artist, volume, change, sold }) => {
   const navigate = useNavigate();
   return (

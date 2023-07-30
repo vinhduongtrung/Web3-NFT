@@ -7,7 +7,7 @@ import { ReactComponent as NavMenu } from "../assets/nav-menu.svg";
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import useWallet from '../store/wallet';
-import useUser from '../store/user';
+import useUser from '../store/useUser';
 
 const SHeader = styled.header`
     display: flex;
