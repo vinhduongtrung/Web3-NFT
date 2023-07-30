@@ -155,7 +155,7 @@ const LayoutRanking = () => {
       await fetchData(page, limit);
     }
     if(data.length === 0 || (page > 1) && data.length < total) {
-      console.log(page);
+      console.log("page : " + page);
       callApi()
     }
     window.addEventListener('scroll', handleScroll);

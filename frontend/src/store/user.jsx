@@ -7,7 +7,7 @@ const useUser = create((set) => ({
     registerRequest: async (register) => {
         console.log(register);
         try {
-            const res = await fetch(`${domain2}/api/v1/auth/register`, {
+            const res = await fetch(`${domain1}/api/v1/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',

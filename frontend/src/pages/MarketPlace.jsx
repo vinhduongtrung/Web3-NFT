@@ -48,7 +48,11 @@ const MarketPlace = () => {
       <Wrapper>
         { 
           data.map((item) =>
-            <NFTCard key={item.nftName} item={item} />
+            <NFTCard
+             key={item.id}
+             item={item}
+             username={item.username}
+             profile = {item.profilePicture} />
           )
         }
       </Wrapper>
