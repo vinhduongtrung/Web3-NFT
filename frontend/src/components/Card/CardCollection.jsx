@@ -60,6 +60,7 @@ const Container = styled.div`
 `
 const CardCollection = ({ item }) => {
   const navigate = useNavigate();
+  const clone = item.data.splice(1);
   return (
     <Container>
       {
@@ -69,7 +70,7 @@ const CardCollection = ({ item }) => {
             onClick={() => navigate(`/nftdetails/${item.username}/id/${item.data[0].id}`)}>
           </div>
           <div className="product-extra">
-            {item && item.data.map((e) =>
+            {item && clone.map((e) =>
               <div className="child" key={e.id} style={{ backgroundImage: `url(${e.image})` }}
                 onClick={() => navigate(`/nftdetails/${item.username}/id/${e.id}`)}>
               </div>

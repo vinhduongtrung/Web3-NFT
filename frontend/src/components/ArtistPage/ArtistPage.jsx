@@ -16,6 +16,7 @@ const ArtistPageStyled = styled.div`
   flex-direction: column;
   display: flex;
   width: 100%;
+  margin-bottom: 80px;
   .bio {
     width: 315px;
     height: auto;
@@ -268,7 +269,11 @@ const ArtistPage = () => {
       <Wrapper>
           {data.nft &&
             data.nft.map((item) =>
-              <NFTCard key={item.name} item={item} username={data.username}/>
+              <NFTCard
+               key={item.id}
+               item={item}
+               username={data.username}
+               profile = {data.profilePicture}/>
             )
           }
         </Wrapper>

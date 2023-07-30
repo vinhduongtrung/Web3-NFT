@@ -12,7 +12,7 @@ const PageStyled = styled.div`
   flex-direction: column;
   gap: 10px;
   padding: 10px 0;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   .nft-bottom {
     display: flex;
     flex-direction: column;
@@ -130,7 +130,7 @@ const ButtonFollowNFTPage = styled.button`
 `;
 const NFTPage = () => {
   const navigate = useNavigate()
-  const { username, id } = useParams();
+  const { username } = useParams();
 
   const { data, fetchData } = useGetMore();
 
@@ -196,9 +196,6 @@ const NFTPage = () => {
             <div className="tags">DARK</div>
           </div>
         </NFTArtistInfoLayout>
-        {/* <RightButtonLayout>
-          <CountTimer></CountTimer>
-        </RightButtonLayout> */}
       </div>
       <div className="nft-bottom">
       <div className="footer-nftpage">
@@ -211,7 +208,11 @@ const NFTPage = () => {
       <Wrapper>
           {
             data.map((item) =>
-              <NFTCard key={item.nftName} item={item} />
+              <NFTCard
+                key={item.id}
+                item={item}
+                username={item.username}
+                profile={item.profilePicture}/>
             )
           }
         </Wrapper>
