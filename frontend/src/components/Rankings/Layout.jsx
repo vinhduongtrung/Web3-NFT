@@ -146,13 +146,16 @@ const Tag = styled.div`
 const LayoutRanking = () => {
   const { data, fetchData } = useTopCreator();
   const [page, setPage] = useState(1);
+  const [total, setTotal] = useState(12);
   const limit = 5;
 
+  
   useEffect(() => {
-     const callApi = async ()=> {
-      fetchData(page, limit);
+    const callApi = async ()=> {
+      await fetchData(page, limit);
     }
-    if(data.length < 8) {
+    if(data.length === 0 || (page > 1) && data.length < total) {
+      console.log(page);
       callApi()
     }
     window.addEventListener('scroll', handleScroll);
@@ -168,17 +171,10 @@ const LayoutRanking = () => {
       setPage((prevPage) => prevPage + 1);
     }
   };
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
   return (
     <LayoutStyled>
       <Header />
       <TaskBar />
-
       <WrapperItemStyled>
         <div className="table-header">
           <div className="table-header-left-ranking">
