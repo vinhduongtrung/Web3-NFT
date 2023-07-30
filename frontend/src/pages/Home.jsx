@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Hero from "../components/Hero"
 import { styled } from 'styled-components'
 import TopCreators from "../components/TopCreators"
@@ -6,8 +5,6 @@ import Category from "../components/Category"
 import Discover from "../components/Discover"
 import HowItWork from "../components/HowItWork"
 import Trending from '../components/Trending'
-import getMoreItem from '../store/useGetMore'
-import { useState } from 'react'
 
 const SHome = styled.div`
   .hero, .trending, .category, .howItWork{
