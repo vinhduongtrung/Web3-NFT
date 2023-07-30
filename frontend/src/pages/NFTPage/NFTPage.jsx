@@ -129,10 +129,10 @@ const ButtonFollowNFTPage = styled.button`
   }
 `;
 const NFTPage = () => {
-  const navigate = useNavigate()
   const { username } = useParams();
-
+  const navigate = useNavigate()
   const { data, fetchData } = useGetMore();
+
 
   useEffect(() => {
     const callApi = async () => {

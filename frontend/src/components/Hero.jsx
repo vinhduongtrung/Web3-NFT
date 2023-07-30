@@ -146,7 +146,7 @@ const Mid = () => {
 const Bottom = () => {
   return (
   <SBottom>
-    <NavLink to={'/register'}>
+    <NavLink to={'/marketplace'}>
       <Button classname="btn" logo={<Rocket />} name="Get Started" />
     </NavLink>
     <div className="additional-info">

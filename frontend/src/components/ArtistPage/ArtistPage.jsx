@@ -185,8 +185,8 @@ const SubTabStyled = styled.div`
     display: flex;
 `
 const ArtistPage = () => {
-  const { hash } = useWallet();
   const {username} = useParams();
+  const { hash } = useWallet();
   const { data, fetchData } = useGetNFT();
 
   useEffect(() => {
