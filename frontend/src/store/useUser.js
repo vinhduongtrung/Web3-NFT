@@ -5,8 +5,6 @@ const domain2 = "http://localhost:8080";
 
 const useUser = create((set) => ({
     data: [],
-    user: [],
-
     registerRequest: async (register) => {
         console.log(register);
         // try {
