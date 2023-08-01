@@ -9,6 +9,7 @@ import Button from './Button';
 import useWallet from '../store/wallet';
 import useUser from '../store/useUser';
 
+
 const SHeader = styled.header`
     display: flex;
     flex-direction: row;
